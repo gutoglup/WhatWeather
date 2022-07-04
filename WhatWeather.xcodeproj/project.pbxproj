@@ -14,6 +14,20 @@
 		D13231612743DFCE004D8512 /* WhatWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13231602743DFCE004D8512 /* WhatWeatherTests.swift */; };
 		D132316B2743DFCE004D8512 /* WhatWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132316A2743DFCE004D8512 /* WhatWeatherUITests.swift */; };
 		D132316D2743DFCE004D8512 /* WhatWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132316C2743DFCE004D8512 /* WhatWeatherUITestsLaunchTests.swift */; };
+		D19733D428708C330056FA2A /* OneCallRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19733D328708C330056FA2A /* OneCallRemoteDataSource.swift */; };
+		D19733DF287095B70056FA2A /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D19733DE287095B70056FA2A /* CombineMoya */; };
+		D19733E2287097380056FA2A /* OneCallRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19733E1287097380056FA2A /* OneCallRouter.swift */; };
+		D1E58ECF2870986B007ABE93 /* NetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E58ECE2870986B007ABE93 /* NetworkSettings.swift */; };
+		D1F5357E2873183400E21925 /* OneCallRequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5357D2873183400E21925 /* OneCallRequestParams.swift */; };
+		D1F5358328731FCF00E21925 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5358228731FCF00E21925 /* ApiKey.swift */; };
+		D1F535852873205900E21925 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F535842873205900E21925 /* Constants.swift */; };
+		D1F53587287329F200E21925 /* OneCallRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F53586287329F200E21925 /* OneCallRepositoryImpl.swift */; };
+		D1F5358928732A6A00E21925 /* OneCallRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5358828732A6A00E21925 /* OneCallRepository.swift */; };
+		D1F5358B28732AC300E21925 /* OneCallDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5358A28732AC300E21925 /* OneCallDataSource.swift */; };
+		D1F5358D28732B8200E21925 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5358C28732B8200E21925 /* WeatherData.swift */; };
+		D1F5358F28732F7000E21925 /* WeatherAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5358E28732F7000E21925 /* WeatherAttributes.swift */; };
+		D1F535912873316400E21925 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F535902873316400E21925 /* WeatherInfo.swift */; };
+		D1F535932873347A00E21925 /* GetCurrentWeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F535922873347A00E21925 /* GetCurrentWeatherUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +58,19 @@
 		D13231662743DFCE004D8512 /* WhatWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D132316A2743DFCE004D8512 /* WhatWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatWeatherUITests.swift; sourceTree = "<group>"; };
 		D132316C2743DFCE004D8512 /* WhatWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D19733D328708C330056FA2A /* OneCallRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRemoteDataSource.swift; sourceTree = "<group>"; };
+		D19733E1287097380056FA2A /* OneCallRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRouter.swift; sourceTree = "<group>"; };
+		D1E58ECE2870986B007ABE93 /* NetworkSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSettings.swift; sourceTree = "<group>"; };
+		D1F5357D2873183400E21925 /* OneCallRequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRequestParams.swift; sourceTree = "<group>"; };
+		D1F5358228731FCF00E21925 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
+		D1F535842873205900E21925 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D1F53586287329F200E21925 /* OneCallRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRepositoryImpl.swift; sourceTree = "<group>"; };
+		D1F5358828732A6A00E21925 /* OneCallRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRepository.swift; sourceTree = "<group>"; };
+		D1F5358A28732AC300E21925 /* OneCallDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallDataSource.swift; sourceTree = "<group>"; };
+		D1F5358C28732B8200E21925 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		D1F5358E28732F7000E21925 /* WeatherAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAttributes.swift; sourceTree = "<group>"; };
+		D1F535902873316400E21925 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		D1F535922873347A00E21925 /* GetCurrentWeatherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentWeatherUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D19733DF287095B70056FA2A /* CombineMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +122,10 @@
 		D132314E2743DFCD004D8512 /* WhatWeather */ = {
 			isa = PBXGroup;
 			children = (
+				D1E58ECD2870985A007ABE93 /* Core */,
+				D19733CB287088450056FA2A /* Presentation */,
+				D19733CA287088420056FA2A /* Domain */,
+				D19733C92870883E0056FA2A /* Data */,
 				D132314F2743DFCD004D8512 /* WhatWeatherApp.swift */,
 				D13231512743DFCD004D8512 /* ContentView.swift */,
 				D13231532743DFCE004D8512 /* Assets.xcassets */,
@@ -127,6 +159,119 @@
 			path = WhatWeatherUITests;
 			sourceTree = "<group>";
 		};
+		D19733C92870883E0056FA2A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D19733CD2870885E0056FA2A /* DataSource */,
+				D19733CC287088520056FA2A /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D19733CA287088420056FA2A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				D19733D1287088CC0056FA2A /* UseCase */,
+				D19733D0287088C90056FA2A /* Repository */,
+				D19733CF287088C60056FA2A /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D19733CB287088450056FA2A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		D19733CC287088520056FA2A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D1F53586287329F200E21925 /* OneCallRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D19733CD2870885E0056FA2A /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D19733D228708A080056FA2A /* API */,
+				D1F5358A28732AC300E21925 /* OneCallDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		D19733CE287088780056FA2A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				D1F5357D2873183400E21925 /* OneCallRequestParams.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		D19733CF287088C60056FA2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1F5358C28732B8200E21925 /* WeatherData.swift */,
+				D1F5358E28732F7000E21925 /* WeatherAttributes.swift */,
+				D1F535902873316400E21925 /* WeatherInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D19733D0287088C90056FA2A /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				D1F5358828732A6A00E21925 /* OneCallRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		D19733D1287088CC0056FA2A /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				D1F535922873347A00E21925 /* GetCurrentWeatherUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		D19733D228708A080056FA2A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D19733E02870971B0056FA2A /* OneCall */,
+				D19733CE287088780056FA2A /* Entity */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		D19733E02870971B0056FA2A /* OneCall */ = {
+			isa = PBXGroup;
+			children = (
+				D19733D328708C330056FA2A /* OneCallRemoteDataSource.swift */,
+				D19733E1287097380056FA2A /* OneCallRouter.swift */,
+			);
+			path = OneCall;
+			sourceTree = "<group>";
+		};
+		D1E58ECD2870985A007ABE93 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D1F5357F28731B0500E21925 /* Networking */,
+				D1F535842873205900E21925 /* Constants.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D1F5357F28731B0500E21925 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D1E58ECE2870986B007ABE93 /* NetworkSettings.swift */,
+				D1F5358228731FCF00E21925 /* ApiKey.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +288,9 @@
 			dependencies = (
 			);
 			name = WhatWeather;
+			packageProductDependencies = (
+				D19733DE287095B70056FA2A /* CombineMoya */,
+			);
 			productName = WhatWeather;
 			productReference = D132314C2743DFCD004D8512 /* WhatWeather.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +363,9 @@
 				Base,
 			);
 			mainGroup = D13231432743DFCD004D8512;
+			packageReferences = (
+				D19733DD287095B70056FA2A /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = D132314D2743DFCD004D8512 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +408,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F535912873316400E21925 /* WeatherInfo.swift in Sources */,
+				D1F5358928732A6A00E21925 /* OneCallRepository.swift in Sources */,
+				D1F53587287329F200E21925 /* OneCallRepositoryImpl.swift in Sources */,
 				D13231522743DFCD004D8512 /* ContentView.swift in Sources */,
+				D1E58ECF2870986B007ABE93 /* NetworkSettings.swift in Sources */,
+				D1F5358D28732B8200E21925 /* WeatherData.swift in Sources */,
+				D19733E2287097380056FA2A /* OneCallRouter.swift in Sources */,
 				D13231502743DFCD004D8512 /* WhatWeatherApp.swift in Sources */,
+				D1F5358F28732F7000E21925 /* WeatherAttributes.swift in Sources */,
+				D1F5358328731FCF00E21925 /* ApiKey.swift in Sources */,
+				D1F5357E2873183400E21925 /* OneCallRequestParams.swift in Sources */,
+				D1F5358B28732AC300E21925 /* OneCallDataSource.swift in Sources */,
+				D19733D428708C330056FA2A /* OneCallRemoteDataSource.swift in Sources */,
+				D1F535852873205900E21925 /* Constants.swift in Sources */,
+				D1F535932873347A00E21925 /* GetCurrentWeatherUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +763,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D19733DD287095B70056FA2A /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D19733DE287095B70056FA2A /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D19733DD287095B70056FA2A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D13231442743DFCD004D8512 /* Project object */;
 }
