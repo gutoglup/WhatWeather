@@ -9,7 +9,7 @@ struct Constants {
     
     enum Networking {
         static let baseUrl: String = "https://api.openweathermap.org/data"
-        static let oneCallVersionApiUrl: String = "\(baseUrl)/3.0"
+        static let oneCallVersionApiUrl: String = "\(baseUrl)/2.5"
     }
     
 }

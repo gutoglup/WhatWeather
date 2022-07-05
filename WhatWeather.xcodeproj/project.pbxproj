@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D13231502743DFCD004D8512 /* WhatWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132314F2743DFCD004D8512 /* WhatWeatherApp.swift */; };
-		D13231522743DFCD004D8512 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13231512743DFCD004D8512 /* ContentView.swift */; };
 		D13231542743DFCE004D8512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13231532743DFCE004D8512 /* Assets.xcassets */; };
 		D13231572743DFCE004D8512 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13231562743DFCE004D8512 /* Preview Assets.xcassets */; };
 		D13231612743DFCE004D8512 /* WhatWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13231602743DFCE004D8512 /* WhatWeatherTests.swift */; };
@@ -28,6 +27,11 @@
 		D1F5358F28732F7000E21925 /* WeatherAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5358E28732F7000E21925 /* WeatherAttributes.swift */; };
 		D1F535912873316400E21925 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F535902873316400E21925 /* WeatherInfo.swift */; };
 		D1F535932873347A00E21925 /* GetCurrentWeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F535922873347A00E21925 /* GetCurrentWeatherUseCase.swift */; };
+		D1F535972873620D00E21925 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F535962873620D00E21925 /* DashboardViewModel.swift */; };
+		D1F535992873622E00E21925 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F535982873622E00E21925 /* DashboardView.swift */; };
+		D1F5359C28736A7600E21925 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D1F5359B28736A7600E21925 /* Swinject-Dynamic */; };
+		D1F5359F28736BC400E21925 /* DependencyInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5359E28736BC400E21925 /* DependencyInjectionContainer.swift */; };
+		D1F535A22873749200E21925 /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F535A12873749200E21925 /* CompositionRoot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +54,6 @@
 /* Begin PBXFileReference section */
 		D132314C2743DFCD004D8512 /* WhatWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D132314F2743DFCD004D8512 /* WhatWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatWeatherApp.swift; sourceTree = "<group>"; };
-		D13231512743DFCD004D8512 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D13231532743DFCE004D8512 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D13231562743DFCE004D8512 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D132315C2743DFCE004D8512 /* WhatWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +74,10 @@
 		D1F5358E28732F7000E21925 /* WeatherAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAttributes.swift; sourceTree = "<group>"; };
 		D1F535902873316400E21925 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
 		D1F535922873347A00E21925 /* GetCurrentWeatherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentWeatherUseCase.swift; sourceTree = "<group>"; };
+		D1F535962873620D00E21925 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		D1F535982873622E00E21925 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		D1F5359E28736BC400E21925 /* DependencyInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainer.swift; sourceTree = "<group>"; };
+		D1F535A12873749200E21925 /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D19733DF287095B70056FA2A /* CombineMoya in Frameworks */,
+				D1F5359C28736A7600E21925 /* Swinject-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +135,6 @@
 				D19733CA287088420056FA2A /* Domain */,
 				D19733C92870883E0056FA2A /* Data */,
 				D132314F2743DFCD004D8512 /* WhatWeatherApp.swift */,
-				D13231512743DFCD004D8512 /* ContentView.swift */,
 				D13231532743DFCE004D8512 /* Assets.xcassets */,
 				D13231552743DFCE004D8512 /* Preview Content */,
 			);
@@ -181,6 +188,7 @@
 		D19733CB287088450056FA2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D1F53594287361D400E21925 /* Dashboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -257,6 +265,8 @@
 		D1E58ECD2870985A007ABE93 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D1F535A02873746200E21925 /* Composite */,
+				D1F5359D28736A8600E21925 /* DI */,
 				D1F5357F28731B0500E21925 /* Networking */,
 				D1F535842873205900E21925 /* Constants.swift */,
 			);
@@ -270,6 +280,31 @@
 				D1F5358228731FCF00E21925 /* ApiKey.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		D1F53594287361D400E21925 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				D1F535962873620D00E21925 /* DashboardViewModel.swift */,
+				D1F535982873622E00E21925 /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		D1F5359D28736A8600E21925 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				D1F5359E28736BC400E21925 /* DependencyInjectionContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		D1F535A02873746200E21925 /* Composite */ = {
+			isa = PBXGroup;
+			children = (
+				D1F535A12873749200E21925 /* CompositionRoot.swift */,
+			);
+			path = Composite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +325,7 @@
 			name = WhatWeather;
 			packageProductDependencies = (
 				D19733DE287095B70056FA2A /* CombineMoya */,
+				D1F5359B28736A7600E21925 /* Swinject-Dynamic */,
 			);
 			productName = WhatWeather;
 			productReference = D132314C2743DFCD004D8512 /* WhatWeather.app */;
@@ -365,6 +401,7 @@
 			mainGroup = D13231432743DFCD004D8512;
 			packageReferences = (
 				D19733DD287095B70056FA2A /* XCRemoteSwiftPackageReference "Moya" */,
+				D1F5359A28736A7600E21925 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = D132314D2743DFCD004D8512 /* Products */;
 			projectDirPath = "";
@@ -408,15 +445,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1F535A22873749200E21925 /* CompositionRoot.swift in Sources */,
+				D1F5359F28736BC400E21925 /* DependencyInjectionContainer.swift in Sources */,
 				D1F535912873316400E21925 /* WeatherInfo.swift in Sources */,
 				D1F5358928732A6A00E21925 /* OneCallRepository.swift in Sources */,
 				D1F53587287329F200E21925 /* OneCallRepositoryImpl.swift in Sources */,
-				D13231522743DFCD004D8512 /* ContentView.swift in Sources */,
 				D1E58ECF2870986B007ABE93 /* NetworkSettings.swift in Sources */,
 				D1F5358D28732B8200E21925 /* WeatherData.swift in Sources */,
 				D19733E2287097380056FA2A /* OneCallRouter.swift in Sources */,
+				D1F535972873620D00E21925 /* DashboardViewModel.swift in Sources */,
 				D13231502743DFCD004D8512 /* WhatWeatherApp.swift in Sources */,
 				D1F5358F28732F7000E21925 /* WeatherAttributes.swift in Sources */,
+				D1F535992873622E00E21925 /* DashboardView.swift in Sources */,
 				D1F5358328731FCF00E21925 /* ApiKey.swift in Sources */,
 				D1F5357E2873183400E21925 /* OneCallRequestParams.swift in Sources */,
 				D1F5358B28732AC300E21925 /* OneCallDataSource.swift in Sources */,
@@ -773,6 +813,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		D1F5359A28736A7600E21925 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -780,6 +828,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D19733DD287095B70056FA2A /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = CombineMoya;
+		};
+		D1F5359B28736A7600E21925 /* Swinject-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1F5359A28736A7600E21925 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = "Swinject-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

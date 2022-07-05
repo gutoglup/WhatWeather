@@ -15,6 +15,12 @@ struct OneCallRemoteDataSource: OneCallDataSource {
     private let provider: MoyaProvider<OneCallRouter>
     private let settings: NetworkSettings
     
+    init(provider: MoyaProvider<OneCallRouter>,
+         settings: NetworkSettings) {
+        self.provider = provider
+        self.settings = settings
+    }
+    
     func getCurrentWeather(params: OneCallRequestParams) -> AnyPublisher<WeatherData, Error> {
         let route = OneCallRoute.currentWeather(params: params)
         let router: OneCallRouter = .init(route: route, settings: settings)

@@ -8,8 +8,8 @@
 struct WeatherAttributes: Decodable {
     
     let currentTime: Int
-    let sunrise: Int
-    let sunset: Int
+    let sunrise: Int?
+    let sunset: Int?
     let temperature: Double
     let feelsLike: Double
     let pressure: Int
@@ -21,7 +21,7 @@ struct WeatherAttributes: Decodable {
     let windSpeed: Double
     let windDeg: Int
     let windGust: Double
-    let weather: WeatherInfo
+    let weather: [WeatherInfo]
     
     enum CodingKeys: String, CodingKey {
         case currentTime = "dt"

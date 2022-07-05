@@ -8,14 +8,18 @@
 import Combine
 
 protocol GetCurrentWeatherUseCase {
-    
+    func getCurrentWeather(params: OneCallRequestParams) -> AnyPublisher<WeatherData, Error>
 }
 
 struct GetCurrentWeatherUseCaseImpl: GetCurrentWeatherUseCase {
     
     private let repository: OneCallRepository
     
-    func getCurrentWeatherUseCase(params: OneCallRequestParams) -> AnyPublisher<WeatherData, Error> {
+    init(repository: OneCallRepository) {
+        self.repository = repository
+    }
+    
+    func getCurrentWeather(params: OneCallRequestParams) -> AnyPublisher<WeatherData, Error> {
         repository.getCurrentWeather(params: params)
     }
 }
