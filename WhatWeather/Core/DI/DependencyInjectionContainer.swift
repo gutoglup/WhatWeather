@@ -8,6 +8,7 @@
 import Swinject
 import Moya
 import SwiftUI
+import CoreLocation
 
 final class DependencyInjectionContainer {
     
@@ -22,11 +23,17 @@ final class DependencyInjectionContainer {
     
     func buildContainer() {
         container.register(DashboardViewModel.self) { resolver in
-            DashboardViewModel(getCurrentWeatherUseCase: resolver.resolve(GetCurrentWeatherUseCase.self)!)
+            DashboardViewModel(
+                getCurrentWeatherUseCase: resolver.resolve(GetCurrentWeatherUseCase.self)!,
+                getUserLocationUseCase: resolver.resolve(GetUserLocationUseCase.self)!)
         }
         
         container.register(GetCurrentWeatherUseCase.self) { resolver in
             GetCurrentWeatherUseCaseImpl(repository: resolver.resolve(OneCallRepository.self)!)
+        }
+        
+        container.register(GetUserLocationUseCase.self) { _ in
+            GetUserLocationUseCaseImpl(locationManager: CLLocationManager())
         }
         
         container.register(OneCallRepository.self) { resolver in

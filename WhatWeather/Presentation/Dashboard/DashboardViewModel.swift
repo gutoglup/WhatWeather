@@ -10,25 +10,56 @@ import CoreLocation
 
 final class DashboardViewModel: ObservableObject {
     
-    @Published var result: WeatherData?
-    var cancellable: Cancellable?
+    @Published var weatherData: WeatherData?
+    @Published var placemark: CLPlacemark?
+    @Published private(set) var userLocation: CLLocationCoordinate2D?
+    @Published private(set) var locationError: LocationError?
+    private var cancellables = Set<AnyCancellable>()
     
     private let getCurrentWeatherUseCase: GetCurrentWeatherUseCase
+    private let getUserLocationUseCase: GetUserLocationUseCase
     
-    init(getCurrentWeatherUseCase: GetCurrentWeatherUseCase) {
+    init(getCurrentWeatherUseCase: GetCurrentWeatherUseCase,
+         getUserLocationUseCase: GetUserLocationUseCase) {
         self.getCurrentWeatherUseCase = getCurrentWeatherUseCase
+        self.getUserLocationUseCase = getUserLocationUseCase
     }
     
-    func getCurrentWeather() {
-        cancellable = getCurrentWeatherUseCase.getCurrentWeather(params: OneCallRequestParams(location: CLLocationCoordinate2D(latitude: -47.97, longitude: -15.87)))
+    func getCurrentWeather(location: CLLocationCoordinate2D) {
+        getCurrentWeatherUseCase.getCurrentWeather(params: OneCallRequestParams(location: location))
             .map { weatherData -> WeatherData in
             print(weatherData)
             return weatherData
             }.sink(receiveCompletion: {
                 print($0)
             }, receiveValue: { weatherData in
-                self.result = weatherData
+                self.weatherData = weatherData
             })
-        
+            .store(in: &cancellables)
+    }
+    
+    func getUserLocation() {
+        getUserLocationUseCase.requestWhenInUseAuthorization()
+            .flatMap { self.getUserLocationUseCase.requestUserLocation() }
+            .sink { completion in
+                if case .failure(let error) = completion {
+                    self.locationError = error
+                }
+            } receiveValue: { location in
+                self.userLocation = location.coordinate
+                self.getCurrentWeather(location: location.coordinate)
+                self.requestUserLocality(location: location)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func requestUserLocality(location: CLLocation) {
+        getUserLocationUseCase.requestUserLocality(location: location)
+            .sink {_ in 
+//                print($0)
+            } receiveValue: { placemark in
+                self.placemark = placemark
+            }.store(in: &cancellables)
+
     }
 }

@@ -13,8 +13,14 @@ struct DashboardView: View {
     @StateObject var dashboardViewModel: DashboardViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .onAppear(perform: dashboardViewModel.getCurrentWeather)
+        
+        VStack {
+            HStack {
+                Text("Location: \(String(describing: dashboardViewModel.placemark?.name ?? ""))")
+            }
+        }
+        .navigationTitle("WhatWeather")
+        .onAppear(perform: dashboardViewModel.getUserLocation)
     }
 }
 

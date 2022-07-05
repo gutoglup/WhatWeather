@@ -32,6 +32,9 @@
 		D1F5359C28736A7600E21925 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = D1F5359B28736A7600E21925 /* Swinject-Dynamic */; };
 		D1F5359F28736BC400E21925 /* DependencyInjectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5359E28736BC400E21925 /* DependencyInjectionContainer.swift */; };
 		D1F535A22873749200E21925 /* CompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F535A12873749200E21925 /* CompositionRoot.swift */; };
+		D1FC6082287474C300F28FBD /* Swinject-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D1F5359B28736A7600E21925 /* Swinject-Dynamic */; };
+		D1FC608528747DD700F28FBD /* GetUserLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC608428747DD700F28FBD /* GetUserLocationUseCase.swift */; };
+		D1FC6088287486E000F28FBD /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1FC6087287486E000F28FBD /* LocationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,20 @@
 			remoteInfo = WhatWeather;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D1FC6083287474C300F28FBD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D1FC6082287474C300F28FBD /* Swinject-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D132314C2743DFCD004D8512 /* WhatWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +95,9 @@
 		D1F535982873622E00E21925 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		D1F5359E28736BC400E21925 /* DependencyInjectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionContainer.swift; sourceTree = "<group>"; };
 		D1F535A12873749200E21925 /* CompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionRoot.swift; sourceTree = "<group>"; };
+		D1FC60802874749800F28FBD /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		D1FC608428747DD700F28FBD /* GetUserLocationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserLocationUseCase.swift; sourceTree = "<group>"; };
+		D1FC6087287486E000F28FBD /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +134,7 @@
 				D132315F2743DFCE004D8512 /* WhatWeatherTests */,
 				D13231692743DFCE004D8512 /* WhatWeatherUITests */,
 				D132314D2743DFCD004D8512 /* Products */,
+				D1FC607F2874749700F28FBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +187,13 @@
 			path = WhatWeatherUITests;
 			sourceTree = "<group>";
 		};
+		D160D807287470F3004F24C3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D19733C92870883E0056FA2A /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +216,7 @@
 		D19733CB287088450056FA2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D160D807287470F3004F24C3 /* Components */,
 				D1F53594287361D400E21925 /* Dashboard */,
 			);
 			path = Presentation;
@@ -221,6 +250,7 @@
 		D19733CF287088C60056FA2A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D1FC6086287486D700F28FBD /* Enums */,
 				D1F5358C28732B8200E21925 /* WeatherData.swift */,
 				D1F5358E28732F7000E21925 /* WeatherAttributes.swift */,
 				D1F535902873316400E21925 /* WeatherInfo.swift */,
@@ -240,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F535922873347A00E21925 /* GetCurrentWeatherUseCase.swift */,
+				D1FC608428747DD700F28FBD /* GetUserLocationUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -307,6 +338,22 @@
 			path = Composite;
 			sourceTree = "<group>";
 		};
+		D1FC607F2874749700F28FBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1FC60802874749800F28FBD /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1FC6086287486D700F28FBD /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				D1FC6087287486E000F28FBD /* LocationError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +364,7 @@
 				D13231482743DFCD004D8512 /* Sources */,
 				D13231492743DFCD004D8512 /* Frameworks */,
 				D132314A2743DFCD004D8512 /* Resources */,
+				D1FC6083287474C300F28FBD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -459,8 +507,10 @@
 				D1F535992873622E00E21925 /* DashboardView.swift in Sources */,
 				D1F5358328731FCF00E21925 /* ApiKey.swift in Sources */,
 				D1F5357E2873183400E21925 /* OneCallRequestParams.swift in Sources */,
+				D1FC608528747DD700F28FBD /* GetUserLocationUseCase.swift in Sources */,
 				D1F5358B28732AC300E21925 /* OneCallDataSource.swift in Sources */,
 				D19733D428708C330056FA2A /* OneCallRemoteDataSource.swift in Sources */,
+				D1FC6088287486E000F28FBD /* LocationError.swift in Sources */,
 				D1F535852873205900E21925 /* Constants.swift in Sources */,
 				D1F535932873347A00E21925 /* GetCurrentWeatherUseCase.swift in Sources */,
 			);
@@ -625,6 +675,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WhatWeather/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app uses your location to search the current weather";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to show the current weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -653,6 +705,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WhatWeather/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app uses your location to search the current weather";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to show the current weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
