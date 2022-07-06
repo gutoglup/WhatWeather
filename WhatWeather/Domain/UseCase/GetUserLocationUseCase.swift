@@ -9,17 +9,16 @@ import CoreLocation
 import Combine
 
 protocol GetUserLocationUseCase {
-    func requestUserLocation() -> Future<CLLocation, LocationError>
-    func requestWhenInUseAuthorization() -> Future<Void, LocationError>
-    func requestUserLocality(location: CLLocation) -> Future<CLPlacemark, LocationError>
+    func requestUserLocation() -> AnyPublisher<CLLocation, LocationError>
+    func requestWhenInUseAuthorization() -> AnyPublisher<Void, LocationError>
+    func requestUserLocality(location: CLLocation) -> AnyPublisher<CLPlacemark, LocationError>
 }
 
 final class GetUserLocationUseCaseImpl: NSObject, GetUserLocationUseCase {
     
     private let locationManager: CLLocationManager
-    private var authorizationRequests: [(Result<Void, LocationError>) -> Void] = []
-    private var locationRequests: [(Result<CLLocation, LocationError>) -> Void] = []
-    private var placemarksRequests: [(Result<CLPlacemark, LocationError>) -> Void] = []
+    private var locationRequest = PassthroughSubject<CLLocation, LocationError>()
+    private var authorizationRequest = PassthroughSubject<Void, LocationError>()
     
     init(locationManager: CLLocationManager) {
         self.locationManager = locationManager
@@ -27,64 +26,46 @@ final class GetUserLocationUseCaseImpl: NSObject, GetUserLocationUseCase {
         self.locationManager.delegate = self
     }
     
-    func requestUserLocation() -> Future<CLLocation, LocationError> {
+    func requestUserLocation() -> AnyPublisher<CLLocation, LocationError> {
         guard locationManager.authorizationStatus == .authorizedAlways ||
                 locationManager.authorizationStatus == .authorizedWhenInUse else {
-            return Future { $0(.failure(.unauthorized)) }
-        }
-        
-        let future = Future<CLLocation, LocationError> { completion in
-            self.locationRequests.append(completion)
+            locationRequest.send(completion: .failure(.unauthorized))
+            locationRequest.send(completion: .finished)
+            return locationRequest.eraseToAnyPublisher()
         }
         
         locationManager.requestLocation()
-        return future
+        return locationRequest.eraseToAnyPublisher()
         
     }
     
-    func requestWhenInUseAuthorization() -> Future<Void, LocationError> {
+    func requestWhenInUseAuthorization() -> AnyPublisher<Void, LocationError> {
         guard locationManager.authorizationStatus == .notDetermined else {
-            return Future { $0(.success(())) }
-        }
-        
-        let future = Future<Void, LocationError> { completion in
-            self.authorizationRequests.append(completion)
+            authorizationRequest.send(())
+            return authorizationRequest.eraseToAnyPublisher()
         }
         
         locationManager.requestWhenInUseAuthorization()
-        return future
+        return authorizationRequest.eraseToAnyPublisher()
     }
     
-    func requestUserLocality(location: CLLocation) -> Future<CLPlacemark, LocationError> {
+    func requestUserLocality(location: CLLocation) -> AnyPublisher<CLPlacemark, LocationError> {
+        let placemarkRequest = PassthroughSubject<CLPlacemark, LocationError>()
         let geocoder = CLGeocoder()
-        let future = Future<CLPlacemark, LocationError> { completion in
-            self.placemarksRequests.append(completion)
-        }
         
         geocoder.reverseGeocodeLocation(location) { placemarks, error in
-            while !self.placemarksRequests.isEmpty {
-                let result = self.placemarksRequests.removeFirst()
-                if let error = error {
-                    result(.failure(LocationError.unableToSearchLocation))
-                }
-                guard let placemark = placemarks?.first else {
-                    return
-                }
-                result(.success(placemark))
+            if error != nil {
+                placemarkRequest.send(completion: .failure(.unableToSearchLocation))
+                placemarkRequest.send(completion: .finished)
             }
-            
+            guard let placemark = placemarks?.first else {
+                return
+            }
+            placemarkRequest.send(placemark)
         }
         
-        return future
+        return placemarkRequest.eraseToAnyPublisher()
     }
-    
-    private func handleUserLocationResult(_ result: Result<CLLocation, LocationError>) {
-        while !locationRequests.isEmpty {
-            let request = locationRequests.removeFirst()
-            request(result)
-        }
-    }
-    
 }
 
 extension GetUserLocationUseCaseImpl: CLLocationManagerDelegate {
@@ -93,22 +74,19 @@ extension GetUserLocationUseCaseImpl: CLLocationManagerDelegate {
         guard let location = locations.last else {
             return
         }
-        handleUserLocationResult(.success(location))
+        locationRequest.send(location)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         if let error = error as? CLError,
            error.code == .denied {
-            handleUserLocationResult(.failure(LocationError.unauthorized))
+            locationRequest.send(completion: .failure(.unauthorized))
         } else {
-            handleUserLocationResult(.failure(LocationError.unableToDetermineLocation))
+            locationRequest.send(completion: .failure(.unableToDetermineLocation))
         }
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        while !authorizationRequests.isEmpty {
-            let request = authorizationRequests.removeFirst()
-            request(.success(()))
-        }
+        authorizationRequest.send(())
     }
 }
