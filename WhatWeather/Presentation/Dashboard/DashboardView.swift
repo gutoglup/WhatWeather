@@ -14,12 +14,30 @@ struct DashboardView: View {
     
     var body: some View {
         
-        VStack {
-            HStack {
-                Text("Location: \(String(describing: dashboardViewModel.placemark?.name ?? ""))")
+        VStack(alignment: .leading) {
+            VStack(alignment: .center) {
+                Text(dashboardViewModel.placemark?.locality ?? "")
+                    .padding([.leading, .trailing], 8)
+                    .padding(.top, 32)
+                    .font(.system(size: 24, weight: .medium, design: .default))
+                Text(dashboardViewModel.currentTemperature())
+                    .font(.system(size: 42, weight: .light, design: .default))
+                    .padding([.bottom], 4)
+                Text(dashboardViewModel.currentTemperatureDescription())
+                    .font(.caption)
+                HStack {
+                    Text("Max: \(dashboardViewModel.dailyMaxTemperature())")
+                        .padding([.trailing], 4)
+                    Text("Min: \(dashboardViewModel.dailyMinTemperature())")
+                }
+                .font(.caption)
             }
+            .frame(maxWidth: .infinity, alignment: .center)
+            
+            Spacer()
+            
         }
-        .navigationTitle("WhatWeather")
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
         .onAppear(perform: dashboardViewModel.getUserLocation)
     }
 }

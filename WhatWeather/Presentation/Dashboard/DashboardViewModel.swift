@@ -55,11 +55,27 @@ final class DashboardViewModel: ObservableObject {
     
     private func requestUserLocality(location: CLLocation) {
         getUserLocationUseCase.requestUserLocality(location: location)
-            .sink {_ in 
-//                print($0)
+            .sink { _ in
+
             } receiveValue: { placemark in
                 self.placemark = placemark
             }.store(in: &cancellables)
 
+    }
+    
+    func currentTemperature() -> String {
+        weatherData?.current.temperature.temperatureLocalized ?? ""
+    }
+    
+    func dailyMaxTemperature() -> String {
+        weatherData?.daily.first?.temperature?.max?.temperatureLocalized ?? ""
+    }
+    
+    func dailyMinTemperature() -> String {
+        weatherData?.daily.first?.temperature?.min?.temperatureLocalized ?? ""
+    }
+    
+    func currentTemperatureDescription() -> String {
+        weatherData?.current.weather.first?.main ?? ""
     }
 }

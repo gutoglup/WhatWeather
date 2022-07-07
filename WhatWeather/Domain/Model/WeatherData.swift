@@ -16,6 +16,7 @@ struct WeatherData: Decodable {
     let timezoneOffset: Int
     let current: WeatherAttributes
     let hourly: [WeatherAttributes]
+    let daily: [DailyWeatherAttributes]
     
     enum CodingKeys: String, CodingKey {
         case latitude = "lat"
@@ -25,5 +26,6 @@ struct WeatherData: Decodable {
         case timezoneOffset = "timezone_offset"
         case current
         case hourly
+        case daily
     }
 }
