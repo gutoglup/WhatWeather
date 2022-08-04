@@ -10,6 +10,8 @@ import CoreLocation
 
 final class DashboardViewModel: ObservableObject {
     
+    @Published private(set) var state: LoadingState<WeatherData> = .idle
+    
     @Published var weatherData: WeatherData?
     @Published var placemark: CLPlacemark?
     @Published private(set) var userLocation: CLLocationCoordinate2D?
@@ -34,11 +36,13 @@ final class DashboardViewModel: ObservableObject {
                 print($0)
             }, receiveValue: { weatherData in
                 self.weatherData = weatherData
+                self.state = .loaded(weatherData)
             })
             .store(in: &cancellables)
     }
     
     func getUserLocation() {
+        state = .loading
         getUserLocationUseCase.requestWhenInUseAuthorization()
             .flatMap { self.getUserLocationUseCase.requestUserLocation() }
             .sink { completion in
@@ -63,19 +67,35 @@ final class DashboardViewModel: ObservableObject {
 
     }
     
-    func currentTemperature() -> String {
-        weatherData?.current.temperature.temperatureLocalized ?? ""
+    func currentTemperature(_ weatherData: WeatherData) -> String {
+        weatherData.current.temperature.temperatureLocalized
     }
     
-    func dailyMaxTemperature() -> String {
-        weatherData?.daily.first?.temperature?.max?.temperatureLocalized ?? ""
+    func dailyMaxTemperature(_ weatherData: WeatherData) -> String {
+        weatherData.daily.first?.temperature?.max?.temperatureLocalized ?? ""
     }
     
-    func dailyMinTemperature() -> String {
-        weatherData?.daily.first?.temperature?.min?.temperatureLocalized ?? ""
+    func dailyMinTemperature(_ weatherData: WeatherData) -> String {
+        weatherData.daily.first?.temperature?.min?.temperatureLocalized ?? ""
     }
     
-    func currentTemperatureDescription() -> String {
-        weatherData?.current.weather.first?.main ?? ""
+    func currentTemperatureDescription(_ weatherData: WeatherData) -> String {
+        weatherData.current.weather.first?.main ?? ""
+    }
+    
+    func temperatureDescription(_ hourData: WeatherAttributes) -> String {
+        hourData.temperature.temperatureLocalized
+    }
+    
+    func weatherHour(_ hourData: WeatherAttributes) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: Date(timeIntervalSince1970: TimeInterval(hourData.currentTime)))
+    }
+    
+    func weatherDate(_ hourData: WeatherAttributes) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM"
+        return formatter.string(from: Date(timeIntervalSince1970: TimeInterval(hourData.currentTime)))
     }
 }

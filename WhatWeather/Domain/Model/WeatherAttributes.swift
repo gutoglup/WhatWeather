@@ -5,8 +5,11 @@
 //  Created by Augusto Reis on 04/07/22.
 //
 
-struct WeatherAttributes: Decodable {
+import Foundation
+
+struct WeatherAttributes: Decodable, Identifiable {
     
+    var id = UUID()
     let currentTime: Int
     let sunrise: Int?
     let sunset: Int?

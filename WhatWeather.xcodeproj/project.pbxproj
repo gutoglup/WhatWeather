@@ -16,6 +16,11 @@
 		D19733D428708C330056FA2A /* OneCallRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19733D328708C330056FA2A /* OneCallRemoteDataSource.swift */; };
 		D19733DF287095B70056FA2A /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D19733DE287095B70056FA2A /* CombineMoya */; };
 		D19733E2287097380056FA2A /* OneCallRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19733E1287097380056FA2A /* OneCallRouter.swift */; };
+		D1B64186289AFAC000807418 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B64185289AFAC000807418 /* ErrorView.swift */; };
+		D1B64188289AFC9B00807418 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B64187289AFC9B00807418 /* LoadingState.swift */; };
+		D1B6418A289AFCC500807418 /* LoadableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B64189289AFCC500807418 /* LoadableObject.swift */; };
+		D1B6418E289AFEF400807418 /* PublishedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6418D289AFEF400807418 /* PublishedObject.swift */; };
+		D1B64190289B094400807418 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6418F289B094400807418 /* DataError.swift */; };
 		D1D7AD952877687700D7D12C /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D7AD942877687700D7D12C /* Double+Extension.swift */; };
 		D1D7AD9728776DA000D7D12C /* DailyTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D7AD9628776DA000D7D12C /* DailyTemperature.swift */; };
 		D1D7AD9928776E9E00D7D12C /* DailyWeatherAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D7AD9828776E9E00D7D12C /* DailyWeatherAttributes.swift */; };
@@ -83,6 +88,11 @@
 		D132316C2743DFCE004D8512 /* WhatWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D19733D328708C330056FA2A /* OneCallRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRemoteDataSource.swift; sourceTree = "<group>"; };
 		D19733E1287097380056FA2A /* OneCallRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRouter.swift; sourceTree = "<group>"; };
+		D1B64185289AFAC000807418 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		D1B64187289AFC9B00807418 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		D1B64189289AFCC500807418 /* LoadableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableObject.swift; sourceTree = "<group>"; };
+		D1B6418D289AFEF400807418 /* PublishedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedObject.swift; sourceTree = "<group>"; };
+		D1B6418F289B094400807418 /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		D1D7AD942877687700D7D12C /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		D1D7AD9628776DA000D7D12C /* DailyTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTemperature.swift; sourceTree = "<group>"; };
 		D1D7AD9828776E9E00D7D12C /* DailyWeatherAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherAttributes.swift; sourceTree = "<group>"; };
@@ -193,13 +203,6 @@
 			path = WhatWeatherUITests;
 			sourceTree = "<group>";
 		};
-		D160D807287470F3004F24C3 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		D19733C92870883E0056FA2A /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,7 +225,7 @@
 		D19733CB287088450056FA2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				D160D807287470F3004F24C3 /* Components */,
+				D1B64184289AFAB700807418 /* Components */,
 				D1F53594287361D400E21925 /* Dashboard */,
 			);
 			path = Presentation;
@@ -262,6 +265,7 @@
 				D1D7AD9828776E9E00D7D12C /* DailyWeatherAttributes.swift */,
 				D1D7AD9628776DA000D7D12C /* DailyTemperature.swift */,
 				D1F535902873316400E21925 /* WeatherInfo.swift */,
+				D1B64189289AFCC500807418 /* LoadableObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +305,14 @@
 			path = OneCall;
 			sourceTree = "<group>";
 		};
+		D1B64184289AFAB700807418 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D1B64185289AFAC000807418 /* ErrorView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D1D7AD932877685100D7D12C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +347,7 @@
 			children = (
 				D1F535962873620D00E21925 /* DashboardViewModel.swift */,
 				D1F535982873622E00E21925 /* DashboardView.swift */,
+				D1B6418D289AFEF400807418 /* PublishedObject.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -367,6 +380,8 @@
 			isa = PBXGroup;
 			children = (
 				D1FC6087287486E000F28FBD /* LocationError.swift */,
+				D1B64187289AFC9B00807418 /* LoadingState.swift */,
+				D1B6418F289B094400807418 /* DataError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -517,20 +532,25 @@
 				D1F5358928732A6A00E21925 /* OneCallRepository.swift in Sources */,
 				D1F53587287329F200E21925 /* OneCallRepositoryImpl.swift in Sources */,
 				D1E58ECF2870986B007ABE93 /* NetworkSettings.swift in Sources */,
+				D1B64186289AFAC000807418 /* ErrorView.swift in Sources */,
 				D1F5358D28732B8200E21925 /* WeatherData.swift in Sources */,
 				D19733E2287097380056FA2A /* OneCallRouter.swift in Sources */,
+				D1B6418E289AFEF400807418 /* PublishedObject.swift in Sources */,
 				D1F535972873620D00E21925 /* DashboardViewModel.swift in Sources */,
 				D13231502743DFCD004D8512 /* WhatWeatherApp.swift in Sources */,
 				D1F5358F28732F7000E21925 /* WeatherAttributes.swift in Sources */,
 				D1F535992873622E00E21925 /* DashboardView.swift in Sources */,
+				D1B6418A289AFCC500807418 /* LoadableObject.swift in Sources */,
 				D1F5358328731FCF00E21925 /* ApiKey.swift in Sources */,
 				D1F5357E2873183400E21925 /* OneCallRequestParams.swift in Sources */,
+				D1B64190289B094400807418 /* DataError.swift in Sources */,
 				D1FC608528747DD700F28FBD /* GetUserLocationUseCase.swift in Sources */,
 				D1F5358B28732AC300E21925 /* OneCallDataSource.swift in Sources */,
 				D19733D428708C330056FA2A /* OneCallRemoteDataSource.swift in Sources */,
 				D1FC6088287486E000F28FBD /* LocationError.swift in Sources */,
 				D1F535852873205900E21925 /* Constants.swift in Sources */,
 				D1D7AD9728776DA000D7D12C /* DailyTemperature.swift in Sources */,
+				D1B64188289AFC9B00807418 /* LoadingState.swift in Sources */,
 				D1F535932873347A00E21925 /* GetCurrentWeatherUseCase.swift in Sources */,
 				D1D7AD9928776E9E00D7D12C /* DailyWeatherAttributes.swift in Sources */,
 			);
