@@ -26,6 +26,22 @@ struct WeatherAttributes: Decodable, Identifiable {
     let windGust: Double?
     let weather: [WeatherInfo]
     
+    var temperatureFormatted: String {
+        temperature.temperatureLocalized
+    }
+    
+    var dateFormatted: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM"
+        return formatter.string(from: Date(timeIntervalSince1970: TimeInterval(currentTime)))
+    }
+    
+    var hourFormatted: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: Date(timeIntervalSince1970: TimeInterval(currentTime)))
+    }
+    
     enum CodingKeys: String, CodingKey {
         case currentTime = "dt"
         case sunrise

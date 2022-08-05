@@ -43,27 +43,11 @@ struct DashboardView: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding([.bottom], 12)
                 
-                Spacer()
                 
-                List {
-                    Section {
-                        ForEach(weatherData.hourly[0..<24]) { hourWeather in
-                            HStack {
-                                VStack(alignment: .leading) {
-                                    Text(dashboardViewModel.weatherDate(hourWeather))
-                                        .font(.system(size: 10, weight: .light, design: .default))
-                                    Text(dashboardViewModel.weatherHour(hourWeather))
-                                }
-                                Spacer()
-                                Text(dashboardViewModel.temperatureDescription(hourWeather))
-                                    .padding([.trailing], 8)
-                            }
-                        }
-                    } header: {
-                        Text("Hoje")
-                            .font(.system(size: 24, weight: .medium, design: .default))
-                    }
-                }
+                
+                HourlyListView(title: "Hoje", hourlyData: dashboardViewModel.getWeatherHourly())
+                    .padding([.horizontal], 12)
+                Spacer()
                 
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)

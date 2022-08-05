@@ -83,19 +83,7 @@ final class DashboardViewModel: ObservableObject {
         weatherData.current.weather.first?.main ?? ""
     }
     
-    func temperatureDescription(_ hourData: WeatherAttributes) -> String {
-        hourData.temperature.temperatureLocalized
-    }
-    
-    func weatherHour(_ hourData: WeatherAttributes) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter.string(from: Date(timeIntervalSince1970: TimeInterval(hourData.currentTime)))
-    }
-    
-    func weatherDate(_ hourData: WeatherAttributes) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM"
-        return formatter.string(from: Date(timeIntervalSince1970: TimeInterval(hourData.currentTime)))
+    func getWeatherHourly() -> [WeatherAttributes] {
+        Array<WeatherAttributes>(weatherData?.hourly.prefix(24) ?? [])
     }
 }
