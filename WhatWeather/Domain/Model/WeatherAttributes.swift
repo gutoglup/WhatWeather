@@ -31,9 +31,7 @@ struct WeatherAttributes: Decodable, Identifiable {
     }
     
     var dateFormatted: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM"
-        return formatter.string(from: Date(timeIntervalSince1970: TimeInterval(currentTime)))
+        currentTime.toDateFormatted
     }
     
     var hourFormatted: String {

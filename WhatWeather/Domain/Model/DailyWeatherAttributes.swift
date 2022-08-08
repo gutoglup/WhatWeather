@@ -5,8 +5,11 @@
 //  Created by Augusto Reis on 07/07/22.
 //
 
-struct DailyWeatherAttributes: Decodable {
+import Foundation
+
+struct DailyWeatherAttributes: Decodable, Identifiable {
     
+    var id = UUID()
     let currentTime: Int
     let sunrise: Int?
     let sunset: Int?
@@ -25,6 +28,10 @@ struct DailyWeatherAttributes: Decodable {
     let pop: Double
     let rain: Double?
     let uvi: Double
+    
+    var dateFormatted: String {
+        currentTime.toDateExtensiveFormatted
+    }
     
     enum CodingKeys: String, CodingKey {
         case currentTime = "dt"

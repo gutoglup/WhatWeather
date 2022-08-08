@@ -15,4 +15,16 @@ struct DailyTemperature: Decodable {
     let night: Double
     let eve: Double
     let morn: Double
+    
+    var dayFormatted: String {
+        day.temperatureLocalized
+    }
+    
+    var minFormatted: String {
+        min?.temperatureLocalized ?? ""
+    }
+    
+    var maxFormatted: String {
+        max?.temperatureLocalized ?? ""
+    }
 }
