@@ -27,6 +27,7 @@
 		D1D7AD9928776E9E00D7D12C /* DailyWeatherAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D7AD9828776E9E00D7D12C /* DailyWeatherAttributes.swift */; };
 		D1DFEA1A28A13E35000EF39D /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFEA1928A13E35000EF39D /* Int+Extension.swift */; };
 		D1DFEA1C28A13EA8000EF39D /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFEA1B28A13EA8000EF39D /* DateFormats.swift */; };
+		D1DFEA1E28A141B6000EF39D /* DailyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFEA1D28A141B6000EF39D /* DailyListView.swift */; };
 		D1E58ECF2870986B007ABE93 /* NetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E58ECE2870986B007ABE93 /* NetworkSettings.swift */; };
 		D1F5357E2873183400E21925 /* OneCallRequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5357D2873183400E21925 /* OneCallRequestParams.swift */; };
 		D1F5358328731FCF00E21925 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5358228731FCF00E21925 /* ApiKey.swift */; };
@@ -102,6 +103,7 @@
 		D1D7AD9828776E9E00D7D12C /* DailyWeatherAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherAttributes.swift; sourceTree = "<group>"; };
 		D1DFEA1928A13E35000EF39D /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		D1DFEA1B28A13EA8000EF39D /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
+		D1DFEA1D28A141B6000EF39D /* DailyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListView.swift; sourceTree = "<group>"; };
 		D1E58ECE2870986B007ABE93 /* NetworkSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSettings.swift; sourceTree = "<group>"; };
 		D1F5357D2873183400E21925 /* OneCallRequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRequestParams.swift; sourceTree = "<group>"; };
 		D1F5358228731FCF00E21925 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			children = (
 				D1F535962873620D00E21925 /* DashboardViewModel.swift */,
 				D1F535982873622E00E21925 /* DashboardView.swift */,
+				D1DFEA1D28A141B6000EF39D /* DailyListView.swift */,
 				D1B6418D289AFEF400807418 /* PublishedObject.swift */,
 				D1B64191289D8E9500807418 /* HourlyListView.swift */,
 			);
@@ -558,6 +561,7 @@
 				D1B64190289B094400807418 /* DataError.swift in Sources */,
 				D1FC608528747DD700F28FBD /* GetUserLocationUseCase.swift in Sources */,
 				D1F5358B28732AC300E21925 /* OneCallDataSource.swift in Sources */,
+				D1DFEA1E28A141B6000EF39D /* DailyListView.swift in Sources */,
 				D19733D428708C330056FA2A /* OneCallRemoteDataSource.swift in Sources */,
 				D1FC6088287486E000F28FBD /* LocationError.swift in Sources */,
 				D1F535852873205900E21925 /* Constants.swift in Sources */,

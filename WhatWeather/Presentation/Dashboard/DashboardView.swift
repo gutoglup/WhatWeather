@@ -22,7 +22,7 @@ struct DashboardView: View {
         case .failed(let error):
             ErrorView(error: error, retryAction: dashboardViewModel.getUserLocation)
         case .loaded(let weatherData):
-            VStack(alignment: .leading) {
+            ScrollView {
                 VStack(alignment: .center) {
                     Text(dashboardViewModel.placemark?.locality ?? "")
                         .padding([.leading, .trailing], 8)
@@ -47,6 +47,9 @@ struct DashboardView: View {
                 
                 HourlyListView(title: "Hoje", hourlyData: dashboardViewModel.getWeatherHourly())
                     .padding([.horizontal], 12)
+                    .padding([.vertical], 18)
+                DailyListView(title: "Previsão para 10 dias", dailyData: dashboardViewModel.getWeatherDaily())
+                    .padding([.horizontal], 12)
                 Spacer()
                 
             }
@@ -62,3 +65,5 @@ struct DashboardView_Previews: PreviewProvider {
                 .shared.container.resolve(DashboardViewModel.self)!)
     }
 }
+
+

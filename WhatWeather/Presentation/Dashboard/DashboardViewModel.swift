@@ -86,4 +86,8 @@ final class DashboardViewModel: ObservableObject {
     func getWeatherHourly() -> [WeatherAttributes] {
         Array<WeatherAttributes>(weatherData?.hourly.prefix(24) ?? [])
     }
+    
+    func getWeatherDaily() -> [DailyWeatherAttributes] {
+        Array(weatherData?.daily.prefix(10) ?? [])
+    }
 }
