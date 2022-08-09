@@ -23,7 +23,6 @@
 		D1B64186289AFAC000807418 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B64185289AFAC000807418 /* ErrorView.swift */; };
 		D1B64188289AFC9B00807418 /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B64187289AFC9B00807418 /* LoadingState.swift */; };
 		D1B6418A289AFCC500807418 /* LoadableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B64189289AFCC500807418 /* LoadableObject.swift */; };
-		D1B6418E289AFEF400807418 /* PublishedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6418D289AFEF400807418 /* PublishedObject.swift */; };
 		D1B64190289B094400807418 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B6418F289B094400807418 /* DataError.swift */; };
 		D1B64192289D8E9500807418 /* HourlyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B64191289D8E9500807418 /* HourlyListView.swift */; };
 		D1D7AD952877687700D7D12C /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D7AD942877687700D7D12C /* Double+Extension.swift */; };
@@ -104,7 +103,6 @@
 		D1B64185289AFAC000807418 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		D1B64187289AFC9B00807418 /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
 		D1B64189289AFCC500807418 /* LoadableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableObject.swift; sourceTree = "<group>"; };
-		D1B6418D289AFEF400807418 /* PublishedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedObject.swift; sourceTree = "<group>"; };
 		D1B6418F289B094400807418 /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		D1B64191289D8E9500807418 /* HourlyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyListView.swift; sourceTree = "<group>"; };
 		D1D7AD942877687700D7D12C /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
@@ -260,6 +258,7 @@
 		D19733CB287088450056FA2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D13135C928A1909C0050B1EA /* SearchPlace */,
 				D13135C628A18C180050B1EA /* TabBar */,
 				D1B64184289AFAB700807418 /* Components */,
 				D1F53594287361D400E21925 /* Dashboard */,
@@ -345,6 +344,8 @@
 			isa = PBXGroup;
 			children = (
 				D1B64185289AFAC000807418 /* ErrorView.swift */,
+				D1B64191289D8E9500807418 /* HourlyListView.swift */,
+				D1DFEA1D28A141B6000EF39D /* DailyListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -386,9 +387,6 @@
 			children = (
 				D1F535962873620D00E21925 /* DashboardViewModel.swift */,
 				D1F535982873622E00E21925 /* DashboardView.swift */,
-				D1DFEA1D28A141B6000EF39D /* DailyListView.swift */,
-				D1B6418D289AFEF400807418 /* PublishedObject.swift */,
-				D1B64191289D8E9500807418 /* HourlyListView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -583,7 +581,6 @@
 				D1F4E38228A29C09003F2E48 /* View+Extension.swift in Sources */,
 				D1DFEA1C28A13EA8000EF39D /* DateFormats.swift in Sources */,
 				D19733E2287097380056FA2A /* OneCallRouter.swift in Sources */,
-				D1B6418E289AFEF400807418 /* PublishedObject.swift in Sources */,
 				D1F535972873620D00E21925 /* DashboardViewModel.swift in Sources */,
 				D13231502743DFCD004D8512 /* WhatWeatherApp.swift in Sources */,
 				D1F5358F28732F7000E21925 /* WeatherAttributes.swift in Sources */,

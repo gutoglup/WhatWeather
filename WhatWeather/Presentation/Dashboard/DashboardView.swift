@@ -16,9 +16,11 @@ struct DashboardView: View {
         
         switch dashboardViewModel.state {
         case .idle:
-            Color.clear.onAppear(perform: dashboardViewModel.getUserLocation)
+            Color.tertiaryBrand.onAppear(perform: dashboardViewModel.getUserLocation)
         case .loading:
             ProgressView()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.tertiaryBrand)
         case .failed(let error):
             ErrorView(error: error, retryAction: dashboardViewModel.getUserLocation)
         case .loaded(let weatherData):
@@ -40,20 +42,19 @@ struct DashboardView: View {
                     }
                     .font(.caption)
                 }
+                .foregroundColor(Color.white)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding([.bottom], 12)
-                
-                
-                
+            
                 HourlyListView(title: "Hoje", hourlyData: dashboardViewModel.getWeatherHourly())
                     .padding([.horizontal], 12)
                     .padding([.vertical], 18)
+                    .foregroundColor(Color.white)
                 DailyListView(title: "Previsão para 10 dias", dailyData: dashboardViewModel.getWeatherDaily())
                     .padding([.horizontal], 12)
-                Spacer()
-                
+                    .foregroundColor(Color.white)
             }
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .leading)
+            .background(Color.tertiaryBrand)
         }
     }
 }

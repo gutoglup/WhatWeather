@@ -23,15 +23,18 @@ struct HourlyListView: View {
                             VStack(alignment: .center) {
                                 Text(hourWeather.hourFormatted)
                                     .font(.system(size: 12, weight: .light, design: .default))
+//                                    .foregroundColor(Color.primaryBrand)
                                 
                                 Text(hourWeather.temperatureFormatted)
                                     .font(.system(size: 20, weight: .regular, design: .default))
+//                                    .foregroundColor(Color.primaryBrand)
                             }
                             .padding(8)
                         }
                         .background(
                             RoundedRectangle(cornerRadius: 4, style: .continuous)
-                                .fill(Color.cyan).opacity(0.2))
+                                .fill(LinearGradient(colors: [Color.quartenaryBrand.opacity(0.8), Color.quartenaryBrand.opacity(0.6)], startPoint: .top, endPoint: .bottom))
+                                .opacity(0.3))
                     }
                 }
             }

@@ -20,7 +20,7 @@ struct DailyListView: View {
                     .font(.system(size: 12, weight: .regular, design: .default))
                     .padding([.horizontal], 8)
                     .opacity(0.9)
-                Divider().overlay(.cyan)
+                Divider().overlay(Color.quartenaryBrand)
                     .padding([.horizontal], 8)
                 ForEach(dailyData) { daily in
                     VStack {
@@ -39,7 +39,7 @@ struct DailyListView: View {
                             Text(daily.temperature?.maxFormatted ?? "")
                                 .font(.system(size: 14, weight: .medium, design: .default))
                         }
-                        Divider().overlay(.cyan)
+                        Divider().overlay(Color.quartenaryBrand)
                     }
                     .padding([.horizontal], 8)
                     .padding([.top], 4)
@@ -49,7 +49,7 @@ struct DailyListView: View {
             .padding([.vertical], 8)
             .background(
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .fill(Color.cyan)
+                    .fill(LinearGradient(colors: [Color.quartenaryBrand.opacity(0.8), Color.quartenaryBrand.opacity(0.6)], startPoint: .top, endPoint: .bottom))
                     .opacity(0.2))
         }
     }
