@@ -20,11 +20,14 @@ final class DashboardViewModel: ObservableObject {
     
     private let getCurrentWeatherUseCase: GetCurrentWeatherUseCase
     private let getUserLocationUseCase: GetUserLocationUseCase
+    private let getUserAddressUseCase: GetUserAddressUseCase
     
     init(getCurrentWeatherUseCase: GetCurrentWeatherUseCase,
-         getUserLocationUseCase: GetUserLocationUseCase) {
+         getUserLocationUseCase: GetUserLocationUseCase,
+         getUserAddressUseCase: GetUserAddressUseCase) {
         self.getCurrentWeatherUseCase = getCurrentWeatherUseCase
         self.getUserLocationUseCase = getUserLocationUseCase
+        self.getUserAddressUseCase = getUserAddressUseCase
     }
     
     func getCurrentWeather(location: CLLocationCoordinate2D) {
@@ -58,7 +61,7 @@ final class DashboardViewModel: ObservableObject {
     }
     
     private func requestUserLocality(location: CLLocation) {
-        getUserLocationUseCase.requestUserLocality(location: location)
+        getUserAddressUseCase.requestUserLocality(location: location)
             .sink { _ in
 
             } receiveValue: { placemark in

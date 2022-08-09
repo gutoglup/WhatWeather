@@ -12,7 +12,7 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             DashboardView(
-                dashboardViewModel:
+                viewModel:
                     DependencyInjectionContainer.shared.container
                     .resolve(DashboardViewModel.self)!)
             .tabItem {
@@ -22,10 +22,13 @@ struct TabBarView: View {
                     Text("Dashboard")
                 }
             }
-            SearchPlaceView()
-                .tabItem{
-                    VStack {
-                        Image(systemName: "magnifyingglass")
+            SearchPlaceView(
+                viewModel:
+                    DependencyInjectionContainer.shared.container
+                    .resolve(SearchPlaceViewModel.self)!)
+            .tabItem{
+                VStack {
+                    Image(systemName: "magnifyingglass")
                             .renderingMode(.template)
                         Text("Search")
                     }

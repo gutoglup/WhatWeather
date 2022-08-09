@@ -11,7 +11,6 @@ import Combine
 protocol GetUserLocationUseCase {
     func requestUserLocation() -> AnyPublisher<CLLocation, LocationError>
     func requestWhenInUseAuthorization() -> AnyPublisher<Void, LocationError>
-    func requestUserLocality(location: CLLocation) -> AnyPublisher<CLPlacemark, LocationError>
 }
 
 final class GetUserLocationUseCaseImpl: NSObject, GetUserLocationUseCase {
@@ -47,24 +46,6 @@ final class GetUserLocationUseCaseImpl: NSObject, GetUserLocationUseCase {
         
         locationManager.requestWhenInUseAuthorization()
         return authorizationRequest.eraseToAnyPublisher()
-    }
-    
-    func requestUserLocality(location: CLLocation) -> AnyPublisher<CLPlacemark, LocationError> {
-        let placemarkRequest = PassthroughSubject<CLPlacemark, LocationError>()
-        let geocoder = CLGeocoder()
-        
-        geocoder.reverseGeocodeLocation(location) { placemarks, error in
-            if error != nil {
-                placemarkRequest.send(completion: .failure(.unableToSearchLocation))
-                placemarkRequest.send(completion: .finished)
-            }
-            guard let placemark = placemarks?.first else {
-                return
-            }
-            placemarkRequest.send(placemark)
-        }
-        
-        return placemarkRequest.eraseToAnyPublisher()
     }
 }
 

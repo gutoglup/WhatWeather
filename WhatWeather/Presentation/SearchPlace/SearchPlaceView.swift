@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import Swinject
 
 struct SearchPlaceView: View {
     
-    @State var searchTextField: String = ""
+    @StateObject var viewModel: SearchPlaceViewModel
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                TextField("", text: $searchTextField)
-                    .placeholder("Search", when: searchTextField.isEmpty)
+                TextField("", text: $viewModel.placeName)
+                    .placeholder("Search", when: viewModel.placeName.isEmpty)
                     .padding()
                     .background(Color.primaryBrand)
                     .cornerRadius(6)
@@ -30,6 +31,9 @@ struct SearchPlaceView: View {
                     .padding([.horizontal], 12)
                     .foregroundColor(Color.quartenaryBrand)
             }
+            ForEach(viewModel.placemarks) { placemark in
+                Text(placemark.name)
+            }
         }
         .background(Color.tertiaryBrand)
     }
@@ -37,6 +41,7 @@ struct SearchPlaceView: View {
 
 struct SearchPlaceView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchPlaceView()
+        SearchPlaceView(viewModel: DependencyInjectionContainer
+            .shared.container.resolve(SearchPlaceViewModel.self)!)
     }
 }

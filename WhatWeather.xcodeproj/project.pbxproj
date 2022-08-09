@@ -17,6 +17,15 @@
 		D13231612743DFCE004D8512 /* WhatWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13231602743DFCE004D8512 /* WhatWeatherTests.swift */; };
 		D132316B2743DFCE004D8512 /* WhatWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132316A2743DFCE004D8512 /* WhatWeatherUITests.swift */; };
 		D132316D2743DFCE004D8512 /* WhatWeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132316C2743DFCE004D8512 /* WhatWeatherUITestsLaunchTests.swift */; };
+		D150C90728A2CAFD00121F52 /* SearchPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D150C90628A2CAFD00121F52 /* SearchPlaceViewModel.swift */; };
+		D150C90928A2CBBA00121F52 /* GetPlacesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D150C90828A2CBBA00121F52 /* GetPlacesUseCase.swift */; };
+		D150C90B28A2CE1D00121F52 /* GeocoderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D150C90A28A2CE1D00121F52 /* GeocoderRepository.swift */; };
+		D150C90D28A2CFF100121F52 /* GeocodeRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D150C90C28A2CFF100121F52 /* GeocodeRepositoryImpl.swift */; };
+		D150C90F28A2D08600121F52 /* GeocoderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D150C90E28A2D08600121F52 /* GeocoderDataSource.swift */; };
+		D150C91228A2D0C400121F52 /* GeocoderRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D150C91128A2D0C400121F52 /* GeocoderRemoteDataSource.swift */; };
+		D150C91428A2D30F00121F52 /* GetUserAddressUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D150C91328A2D30F00121F52 /* GetUserAddressUseCase.swift */; };
+		D150C91628A2E0A000121F52 /* AddressLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D150C91528A2E09F00121F52 /* AddressLocation.swift */; };
+		D150C91928A2E5DA00121F52 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D150C91828A2E5DA00121F52 /* MapKit.framework */; };
 		D19733D428708C330056FA2A /* OneCallRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19733D328708C330056FA2A /* OneCallRemoteDataSource.swift */; };
 		D19733DF287095B70056FA2A /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = D19733DE287095B70056FA2A /* CombineMoya */; };
 		D19733E2287097380056FA2A /* OneCallRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19733E1287097380056FA2A /* OneCallRouter.swift */; };
@@ -98,6 +107,16 @@
 		D13231662743DFCE004D8512 /* WhatWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D132316A2743DFCE004D8512 /* WhatWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatWeatherUITests.swift; sourceTree = "<group>"; };
 		D132316C2743DFCE004D8512 /* WhatWeatherUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatWeatherUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D150C90628A2CAFD00121F52 /* SearchPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceViewModel.swift; sourceTree = "<group>"; };
+		D150C90828A2CBBA00121F52 /* GetPlacesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlacesUseCase.swift; sourceTree = "<group>"; };
+		D150C90A28A2CE1D00121F52 /* GeocoderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderRepository.swift; sourceTree = "<group>"; };
+		D150C90C28A2CFF100121F52 /* GeocodeRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeRepositoryImpl.swift; sourceTree = "<group>"; };
+		D150C90E28A2D08600121F52 /* GeocoderDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderDataSource.swift; sourceTree = "<group>"; };
+		D150C91128A2D0C400121F52 /* GeocoderRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderRemoteDataSource.swift; sourceTree = "<group>"; };
+		D150C91328A2D30F00121F52 /* GetUserAddressUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserAddressUseCase.swift; sourceTree = "<group>"; };
+		D150C91528A2E09F00121F52 /* AddressLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressLocation.swift; sourceTree = "<group>"; };
+		D150C91728A2E5DA00121F52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D150C91828A2E5DA00121F52 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D19733D328708C330056FA2A /* OneCallRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRemoteDataSource.swift; sourceTree = "<group>"; };
 		D19733E1287097380056FA2A /* OneCallRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRouter.swift; sourceTree = "<group>"; };
 		D1B64185289AFAC000807418 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
@@ -138,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D19733DF287095B70056FA2A /* CombineMoya in Frameworks */,
+				D150C91928A2E5DA00121F52 /* MapKit.framework in Frameworks */,
 				D1F5359C28736A7600E21925 /* Swinject-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				D13135CA28A190AE0050B1EA /* SearchPlaceView.swift */,
+				D150C90628A2CAFD00121F52 /* SearchPlaceViewModel.swift */,
 			);
 			path = SearchPlace;
 			sourceTree = "<group>";
@@ -199,6 +220,7 @@
 		D132314E2743DFCD004D8512 /* WhatWeather */ = {
 			isa = PBXGroup;
 			children = (
+				D150C91728A2E5DA00121F52 /* Info.plist */,
 				D1E58ECD2870985A007ABE93 /* Core */,
 				D19733CB287088450056FA2A /* Presentation */,
 				D19733CA287088420056FA2A /* Domain */,
@@ -236,6 +258,14 @@
 			path = WhatWeatherUITests;
 			sourceTree = "<group>";
 		};
+		D150C91028A2D0B300121F52 /* Geocoder */ = {
+			isa = PBXGroup;
+			children = (
+				D150C91128A2D0C400121F52 /* GeocoderRemoteDataSource.swift */,
+			);
+			path = Geocoder;
+			sourceTree = "<group>";
+		};
 		D19733C92870883E0056FA2A /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F53586287329F200E21925 /* OneCallRepositoryImpl.swift */,
+				D150C90C28A2CFF100121F52 /* GeocodeRepositoryImpl.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -279,6 +310,7 @@
 			children = (
 				D19733D228708A080056FA2A /* API */,
 				D1F5358A28732AC300E21925 /* OneCallDataSource.swift */,
+				D150C90E28A2D08600121F52 /* GeocoderDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -301,6 +333,7 @@
 				D1D7AD9628776DA000D7D12C /* DailyTemperature.swift */,
 				D1F535902873316400E21925 /* WeatherInfo.swift */,
 				D1B64189289AFCC500807418 /* LoadableObject.swift */,
+				D150C91528A2E09F00121F52 /* AddressLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F5358828732A6A00E21925 /* OneCallRepository.swift */,
+				D150C90A28A2CE1D00121F52 /* GeocoderRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -318,6 +352,8 @@
 			children = (
 				D1F535922873347A00E21925 /* GetCurrentWeatherUseCase.swift */,
 				D1FC608428747DD700F28FBD /* GetUserLocationUseCase.swift */,
+				D150C90828A2CBBA00121F52 /* GetPlacesUseCase.swift */,
+				D150C91328A2D30F00121F52 /* GetUserAddressUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -325,6 +361,7 @@
 		D19733D228708A080056FA2A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D150C91028A2D0B300121F52 /* Geocoder */,
 				D19733E02870971B0056FA2A /* OneCall */,
 				D19733CE287088780056FA2A /* Entity */,
 			);
@@ -410,6 +447,7 @@
 		D1FC607F2874749700F28FBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D150C91828A2E5DA00121F52 /* MapKit.framework */,
 				D1FC60802874749800F28FBD /* SwiftUI.framework */,
 			);
 			name = Frameworks;
@@ -572,11 +610,15 @@
 				D13135CF28A1968E0050B1EA /* Color+Extension.swift in Sources */,
 				D1F535912873316400E21925 /* WeatherInfo.swift in Sources */,
 				D1F5358928732A6A00E21925 /* OneCallRepository.swift in Sources */,
+				D150C90928A2CBBA00121F52 /* GetPlacesUseCase.swift in Sources */,
 				D1DFEA1A28A13E35000EF39D /* Int+Extension.swift in Sources */,
 				D1F53587287329F200E21925 /* OneCallRepositoryImpl.swift in Sources */,
+				D150C90728A2CAFD00121F52 /* SearchPlaceViewModel.swift in Sources */,
 				D1B64192289D8E9500807418 /* HourlyListView.swift in Sources */,
 				D1E58ECF2870986B007ABE93 /* NetworkSettings.swift in Sources */,
+				D150C90B28A2CE1D00121F52 /* GeocoderRepository.swift in Sources */,
 				D1B64186289AFAC000807418 /* ErrorView.swift in Sources */,
+				D150C91228A2D0C400121F52 /* GeocoderRemoteDataSource.swift in Sources */,
 				D1F5358D28732B8200E21925 /* WeatherData.swift in Sources */,
 				D1F4E38228A29C09003F2E48 /* View+Extension.swift in Sources */,
 				D1DFEA1C28A13EA8000EF39D /* DateFormats.swift in Sources */,
@@ -588,9 +630,12 @@
 				D1B6418A289AFCC500807418 /* LoadableObject.swift in Sources */,
 				D13135C828A18C2F0050B1EA /* TabBarView.swift in Sources */,
 				D1F5358328731FCF00E21925 /* ApiKey.swift in Sources */,
+				D150C91428A2D30F00121F52 /* GetUserAddressUseCase.swift in Sources */,
 				D1F5357E2873183400E21925 /* OneCallRequestParams.swift in Sources */,
+				D150C91628A2E0A000121F52 /* AddressLocation.swift in Sources */,
 				D13135CB28A190AE0050B1EA /* SearchPlaceView.swift in Sources */,
 				D1B64190289B094400807418 /* DataError.swift in Sources */,
+				D150C90D28A2CFF100121F52 /* GeocodeRepositoryImpl.swift in Sources */,
 				D1FC608528747DD700F28FBD /* GetUserLocationUseCase.swift in Sources */,
 				D1F5358B28732AC300E21925 /* OneCallDataSource.swift in Sources */,
 				D1DFEA1E28A141B6000EF39D /* DailyListView.swift in Sources */,
@@ -600,6 +645,7 @@
 				D1D7AD9728776DA000D7D12C /* DailyTemperature.swift in Sources */,
 				D1B64188289AFC9B00807418 /* LoadingState.swift in Sources */,
 				D1F535932873347A00E21925 /* GetCurrentWeatherUseCase.swift in Sources */,
+				D150C90F28A2D08600121F52 /* GeocoderDataSource.swift in Sources */,
 				D1D7AD9928776E9E00D7D12C /* DailyWeatherAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,8 +807,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatWeather/Preview Content\"";
+				DEVELOPMENT_TEAM = W7L72F5H99;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatWeather/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app uses your location to search the current weather";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to show the current weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -791,8 +839,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatWeather/Preview Content\"";
+				DEVELOPMENT_TEAM = W7L72F5H99;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WhatWeather/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "This app uses your location to search the current weather";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app uses your location to show the current weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

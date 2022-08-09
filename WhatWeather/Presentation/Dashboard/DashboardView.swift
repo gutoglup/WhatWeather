@@ -10,35 +10,35 @@ import Swinject
 
 struct DashboardView: View {
     
-    @StateObject var dashboardViewModel: DashboardViewModel
+    @StateObject var viewModel: DashboardViewModel
     
     var body: some View {
         
-        switch dashboardViewModel.state {
+        switch viewModel.state {
         case .idle:
-            Color.tertiaryBrand.onAppear(perform: dashboardViewModel.getUserLocation)
+            Color.tertiaryBrand.onAppear(perform: viewModel.getUserLocation)
         case .loading:
             ProgressView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color.tertiaryBrand)
         case .failed(let error):
-            ErrorView(error: error, retryAction: dashboardViewModel.getUserLocation)
+            ErrorView(error: error, retryAction: viewModel.getUserLocation)
         case .loaded(let weatherData):
             ScrollView {
                 VStack(alignment: .center) {
-                    Text(dashboardViewModel.placemark?.locality ?? "")
+                    Text(viewModel.placemark?.locality ?? "")
                         .padding([.leading, .trailing], 8)
                         .padding(.top, 32)
                         .font(.system(size: 24, weight: .medium, design: .default))
-                    Text(dashboardViewModel.currentTemperature(weatherData))
+                    Text(viewModel.currentTemperature(weatherData))
                         .font(.system(size: 42, weight: .light, design: .default))
                         .padding([.bottom], 4)
-                    Text(dashboardViewModel.currentTemperatureDescription(weatherData))
+                    Text(viewModel.currentTemperatureDescription(weatherData))
                         .font(.caption)
                     HStack {
-                        Text("Max: \(dashboardViewModel.dailyMaxTemperature(weatherData))")
+                        Text("Max: \(viewModel.dailyMaxTemperature(weatherData))")
                             .padding([.trailing], 4)
-                        Text("Min: \(dashboardViewModel.dailyMinTemperature(weatherData))")
+                        Text("Min: \(viewModel.dailyMinTemperature(weatherData))")
                     }
                     .font(.caption)
                 }
@@ -46,11 +46,11 @@ struct DashboardView: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding([.bottom], 12)
             
-                HourlyListView(title: "Hoje", hourlyData: dashboardViewModel.getWeatherHourly())
+                HourlyListView(title: "Hoje", hourlyData: viewModel.getWeatherHourly())
                     .padding([.horizontal], 12)
                     .padding([.vertical], 18)
                     .foregroundColor(Color.white)
-                DailyListView(title: "Previsão para 10 dias", dailyData: dashboardViewModel.getWeatherDaily())
+                DailyListView(title: "Previsão para 10 dias", dailyData: viewModel.getWeatherDaily())
                     .padding([.horizontal], 12)
                     .foregroundColor(Color.white)
             }
@@ -62,7 +62,7 @@ struct DashboardView: View {
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
         DashboardView(
-            dashboardViewModel: DependencyInjectionContainer
+            viewModel: DependencyInjectionContainer
                 .shared.container.resolve(DashboardViewModel.self)!)
     }
 }
