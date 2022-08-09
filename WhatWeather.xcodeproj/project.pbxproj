@@ -81,6 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D13135CC28A194F00050B1EA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		D13135CE28A1968E0050B1EA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D132314C2743DFCD004D8512 /* WhatWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D132314F2743DFCD004D8512 /* WhatWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatWeatherApp.swift; sourceTree = "<group>"; };
 		D13231532743DFCE004D8512 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				D19733C92870883E0056FA2A /* Data */,
 				D132314F2743DFCD004D8512 /* WhatWeatherApp.swift */,
 				D13231532743DFCE004D8512 /* Assets.xcassets */,
+				D13135CC28A194F00050B1EA /* Colors.xcassets */,
 				D13231552743DFCE004D8512 /* Preview Content */,
 			);
 			path = WhatWeather;
@@ -324,6 +327,7 @@
 		D1D7AD932877685100D7D12C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D13135CE28A1968E0050B1EA /* Color+Extension.swift */,
 				D1D7AD942877687700D7D12C /* Double+Extension.swift */,
 				D1DFEA1928A13E35000EF39D /* Int+Extension.swift */,
 			);
@@ -511,6 +515,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D13135CD28A194F00050B1EA /* Colors.xcassets in Resources */,
 				D13231572743DFCE004D8512 /* Preview Assets.xcassets in Resources */,
 				D13231542743DFCE004D8512 /* Assets.xcassets in Resources */,
 			);
@@ -540,6 +545,7 @@
 				D1F535A22873749200E21925 /* CompositionRoot.swift in Sources */,
 				D1F5359F28736BC400E21925 /* DependencyInjectionContainer.swift in Sources */,
 				D1D7AD952877687700D7D12C /* Double+Extension.swift in Sources */,
+				D13135CF28A1968E0050B1EA /* Color+Extension.swift in Sources */,
 				D1F535912873316400E21925 /* WeatherInfo.swift in Sources */,
 				D1F5358928732A6A00E21925 /* OneCallRepository.swift in Sources */,
 				D1DFEA1A28A13E35000EF39D /* Int+Extension.swift in Sources */,
