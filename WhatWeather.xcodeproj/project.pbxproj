@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D13135C828A18C2F0050B1EA /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13135C728A18C2F0050B1EA /* TabBarView.swift */; };
+		D13135CB28A190AE0050B1EA /* SearchPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13135CA28A190AE0050B1EA /* SearchPlaceView.swift */; };
 		D13135CD28A194F00050B1EA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13135CC28A194F00050B1EA /* Colors.xcassets */; };
 		D13135CF28A1968E0050B1EA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13135CE28A1968E0050B1EA /* Color+Extension.swift */; };
 		D13231502743DFCD004D8512 /* WhatWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132314F2743DFCD004D8512 /* WhatWeatherApp.swift */; };
@@ -86,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		D13135C728A18C2F0050B1EA /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		D13135CA28A190AE0050B1EA /* SearchPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceView.swift; sourceTree = "<group>"; };
 		D13135CC28A194F00050B1EA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D13135CE28A1968E0050B1EA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D132314C2743DFCD004D8512 /* WhatWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,14 @@
 				D13135C728A18C2F0050B1EA /* TabBarView.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		D13135C928A1909C0050B1EA /* SearchPlace */ = {
+			isa = PBXGroup;
+			children = (
+				D13135CA28A190AE0050B1EA /* SearchPlaceView.swift */,
+			);
+			path = SearchPlace;
 			sourceTree = "<group>";
 		};
 		D13231432743DFCD004D8512 = {
@@ -582,6 +592,7 @@
 				D13135C828A18C2F0050B1EA /* TabBarView.swift in Sources */,
 				D1F5358328731FCF00E21925 /* ApiKey.swift in Sources */,
 				D1F5357E2873183400E21925 /* OneCallRequestParams.swift in Sources */,
+				D13135CB28A190AE0050B1EA /* SearchPlaceView.swift in Sources */,
 				D1B64190289B094400807418 /* DataError.swift in Sources */,
 				D1FC608528747DD700F28FBD /* GetUserLocationUseCase.swift in Sources */,
 				D1F5358B28732AC300E21925 /* OneCallDataSource.swift in Sources */,
