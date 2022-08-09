@@ -10,10 +10,6 @@ import SwiftUI
 enum CompositionRoot {
     
     static var composeApp: some View {
-        NavigationView {
-            DashboardView(
-                dashboardViewModel: DependencyInjectionContainer
-                    .shared.container.resolve(DashboardViewModel.self)!)
-        }
+        TabBarView()
     }
 }

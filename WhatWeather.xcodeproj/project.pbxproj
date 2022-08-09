@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D13135C828A18C2F0050B1EA /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13135C728A18C2F0050B1EA /* TabBarView.swift */; };
 		D13231502743DFCD004D8512 /* WhatWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132314F2743DFCD004D8512 /* WhatWeatherApp.swift */; };
 		D13231542743DFCE004D8512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13231532743DFCE004D8512 /* Assets.xcassets */; };
 		D13231572743DFCE004D8512 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13231562743DFCE004D8512 /* Preview Assets.xcassets */; };
@@ -81,6 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D13135C728A18C2F0050B1EA /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D13135CC28A194F00050B1EA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D13135CE28A1968E0050B1EA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D132314C2743DFCD004D8512 /* WhatWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D13135C628A18C180050B1EA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D13135C728A18C2F0050B1EA /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		D13231432743DFCD004D8512 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +246,7 @@
 		D19733CB287088450056FA2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D13135C628A18C180050B1EA /* TabBar */,
 				D1B64184289AFAB700807418 /* Components */,
 				D1F53594287361D400E21925 /* Dashboard */,
 			);
@@ -562,6 +573,7 @@
 				D1F5358F28732F7000E21925 /* WeatherAttributes.swift in Sources */,
 				D1F535992873622E00E21925 /* DashboardView.swift in Sources */,
 				D1B6418A289AFCC500807418 /* LoadableObject.swift in Sources */,
+				D13135C828A18C2F0050B1EA /* TabBarView.swift in Sources */,
 				D1F5358328731FCF00E21925 /* ApiKey.swift in Sources */,
 				D1F5357E2873183400E21925 /* OneCallRequestParams.swift in Sources */,
 				D1B64190289B094400807418 /* DataError.swift in Sources */,
