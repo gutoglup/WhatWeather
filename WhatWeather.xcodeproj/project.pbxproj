@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D13135C828A18C2F0050B1EA /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13135C728A18C2F0050B1EA /* TabBarView.swift */; };
+		D13135CD28A194F00050B1EA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13135CC28A194F00050B1EA /* Colors.xcassets */; };
+		D13135CF28A1968E0050B1EA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13135CE28A1968E0050B1EA /* Color+Extension.swift */; };
 		D13231502743DFCD004D8512 /* WhatWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D132314F2743DFCD004D8512 /* WhatWeatherApp.swift */; };
 		D13231542743DFCE004D8512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13231532743DFCE004D8512 /* Assets.xcassets */; };
 		D13231572743DFCE004D8512 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13231562743DFCE004D8512 /* Preview Assets.xcassets */; };
@@ -30,6 +32,7 @@
 		D1DFEA1C28A13EA8000EF39D /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFEA1B28A13EA8000EF39D /* DateFormats.swift */; };
 		D1DFEA1E28A141B6000EF39D /* DailyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DFEA1D28A141B6000EF39D /* DailyListView.swift */; };
 		D1E58ECF2870986B007ABE93 /* NetworkSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E58ECE2870986B007ABE93 /* NetworkSettings.swift */; };
+		D1F4E38228A29C09003F2E48 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F4E38128A29C09003F2E48 /* View+Extension.swift */; };
 		D1F5357E2873183400E21925 /* OneCallRequestParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5357D2873183400E21925 /* OneCallRequestParams.swift */; };
 		D1F5358328731FCF00E21925 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F5358228731FCF00E21925 /* ApiKey.swift */; };
 		D1F535852873205900E21925 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F535842873205900E21925 /* Constants.swift */; };
@@ -109,6 +112,7 @@
 		D1DFEA1B28A13EA8000EF39D /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		D1DFEA1D28A141B6000EF39D /* DailyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyListView.swift; sourceTree = "<group>"; };
 		D1E58ECE2870986B007ABE93 /* NetworkSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSettings.swift; sourceTree = "<group>"; };
+		D1F4E38128A29C09003F2E48 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		D1F5357D2873183400E21925 /* OneCallRequestParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCallRequestParams.swift; sourceTree = "<group>"; };
 		D1F5358228731FCF00E21925 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		D1F535842873205900E21925 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 				D13135CE28A1968E0050B1EA /* Color+Extension.swift */,
 				D1D7AD942877687700D7D12C /* Double+Extension.swift */,
 				D1DFEA1928A13E35000EF39D /* Int+Extension.swift */,
+				D1F4E38128A29C09003F2E48 /* View+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -565,6 +570,7 @@
 				D1E58ECF2870986B007ABE93 /* NetworkSettings.swift in Sources */,
 				D1B64186289AFAC000807418 /* ErrorView.swift in Sources */,
 				D1F5358D28732B8200E21925 /* WeatherData.swift in Sources */,
+				D1F4E38228A29C09003F2E48 /* View+Extension.swift in Sources */,
 				D1DFEA1C28A13EA8000EF39D /* DateFormats.swift in Sources */,
 				D19733E2287097380056FA2A /* OneCallRouter.swift in Sources */,
 				D1B6418E289AFEF400807418 /* PublishedObject.swift in Sources */,
