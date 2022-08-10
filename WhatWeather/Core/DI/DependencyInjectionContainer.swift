@@ -16,7 +16,7 @@ final class DependencyInjectionContainer {
     
     var container: Container
     
-    init() {
+    private init() {
         self.container = Container()
         buildContainer()
     }
@@ -66,8 +66,10 @@ final class DependencyInjectionContainer {
         
         // MARK: - Data source
         
-        container.register(GeocoderDataSource.self) { _ in
-            GeocoderRemoteDataSource(geocoder: CLGeocoder())
+        container.register(GeocoderDataSource.self) { resolver in
+            GeocoderRemoteDataSource(geocoder: CLGeocoder(),
+                                     provider: MoyaProvider<GeocoderRouter>(plugins: [NetworkLoggerPlugin()]),
+                                     settings: NetworkSettings(apiKey: resolver.resolve(ApiKey.self)!))
         }
         
         container.register(OneCallDataSource.self) { resolver in
