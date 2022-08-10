@@ -18,10 +18,10 @@ struct DailyListView: View {
             VStack(alignment: .leading) {
                 Text(title.uppercased())
                     .font(.custom(.regular(.caption)))
-                    .padding([.horizontal], 8)
+                    .padding([.horizontal], .custom(.small))
                     .opacity(0.9)
                 Divider().overlay(Color.quartenaryBrand)
-                    .padding([.horizontal], 8)
+                    .padding([.horizontal], .custom(.small))
                 ForEach(dailyData) { daily in
                     VStack {
                         HStack {
@@ -41,12 +41,12 @@ struct DailyListView: View {
                         }
                         Divider().overlay(Color.quartenaryBrand)
                     }
-                    .padding([.horizontal], 8)
-                    .padding([.top], 4)
+                    .padding([.horizontal], .custom(.small))
+                    .padding([.top], .custom(.smallest))
                     
                 }
             }
-            .padding([.vertical], 8)
+            .padding([.vertical], .custom(.small))
             .background(
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
                     .fill(LinearGradient(colors: [Color.quartenaryBrand.opacity(0.8), Color.quartenaryBrand.opacity(0.6)], startPoint: .top, endPoint: .bottom))

@@ -20,4 +20,12 @@ extension View {
             Text(text).foregroundColor(Color.quartenaryBrand)
         }
     }
+    
+    func frameWidthHeightInfinity(alignment: Alignment = .center) -> some View {
+        frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
+    }
+    
+    func frameWidthInfinity(alignment: Alignment = .center) -> some View {
+        frame(maxWidth: .infinity, alignment: alignment)
+    }
 }

@@ -20,7 +20,7 @@ struct SearchPlaceView: View {
                 .padding()
                 .background(Color.primaryBrand)
                 .cornerRadius(6)
-                .padding(3)
+                .padding(.custom(.smallest))
                 .overlay(RoundedRectangle(cornerRadius: 6)
                     .stroke(
                         LinearGradient(
@@ -28,22 +28,23 @@ struct SearchPlaceView: View {
                             startPoint: .leading,
                             endPoint: .trailing),
                         lineWidth: 1))
-                .padding([.horizontal], 12)
+                .padding([.horizontal], .custom(.medium))
                 .foregroundColor(Color.quartenaryBrand)
             switch viewModel.state {
             case .idle:
                 Text("Type a city name to search")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frameWidthHeightInfinity()
             case .loading:
                 ProgressView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frameWidthHeightInfinity()
             case .failed(let error):
                 ErrorView(error: error, retryAction: {})
             case .loaded(let addressesLocation):
                 ScrollView {
                     ForEach(addressesLocation) { addressLocation in
                         SearchPlaceCell(addressLocation: addressLocation)
-                    }.offset(x: 0, y: 12)
+                    }.offset(x: .custom(.none),
+                             y: .custom(.medium))
                 }
                 .background(Color.quartenaryBrand.mask(RoundedRectangle(cornerRadius: 10)))
             }

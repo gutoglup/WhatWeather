@@ -15,7 +15,7 @@ struct HourlyListView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
-                .font(.system(size: 24, weight: .medium, design: .default))
+                .font(.custom(.medium(.titleMedium)))
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(hourlyData) { hourWeather in

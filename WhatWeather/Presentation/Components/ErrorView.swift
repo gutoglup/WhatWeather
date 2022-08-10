@@ -18,7 +18,7 @@ struct ErrorView: View {
             Button(action: retryAction) {
                 Text("Try again")
             }
-        }.padding([.horizontal], 12)
+        }.padding([.horizontal], .custom(.medium))
     }
 }
 

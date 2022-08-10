@@ -35,7 +35,7 @@ struct SearchPlaceCell: View {
             .padding()
             Divider()
                 .padding([.horizontal])
-                .padding([.vertical], 0)
+                .padding([.vertical], .custom(.none))
         }
     }
 }

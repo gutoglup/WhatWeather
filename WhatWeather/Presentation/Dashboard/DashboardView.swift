@@ -19,7 +19,7 @@ struct DashboardView: View {
             Color.tertiaryBrand.onAppear(perform: viewModel.getUserLocation)
         case .loading:
             ProgressView()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frameWidthHeightInfinity()
                 .background(Color.tertiaryBrand)
         case .failed(let error):
             ErrorView(error: error, retryAction: viewModel.getUserLocation)
@@ -27,31 +27,31 @@ struct DashboardView: View {
             ScrollView {
                 VStack(alignment: .center) {
                     Text(viewModel.placemark?.locality ?? "")
-                        .padding([.leading, .trailing], 8)
-                        .padding(.top, 32)
+                        .padding([.leading, .trailing], .custom(.small))
+                        .padding(.top, .custom(.extraLargest))
                         .font(.custom(.medium(.titleMedium)))
                     Text(viewModel.currentTemperature(weatherData))
                         .font(.custom(.light(.titleLarge)))
-                        .padding([.bottom], 4)
+                        .padding([.bottom], .custom(.smallest))
                     Text(viewModel.currentTemperatureDescription(weatherData))
                         .font(.custom(.regular(.caption)))
                     HStack {
                         Text("Max: \(viewModel.dailyMaxTemperature(weatherData))")
-                            .padding([.trailing], 4)
+                            .padding([.trailing], .custom(.smallest))
                         Text("Min: \(viewModel.dailyMinTemperature(weatherData))")
                     }
                     .font(.custom(.regular(.caption)))
                 }
                 .foregroundColor(Color.white)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding([.bottom], 12)
+                .frameWidthInfinity()
+                .padding([.bottom], .custom(.medium))
             
                 HourlyListView(title: "Hoje", hourlyData: viewModel.getWeatherHourly())
-                    .padding([.horizontal], 12)
-                    .padding([.vertical], 18)
+                    .padding([.horizontal], .custom(.small))
+                    .padding([.vertical], .custom(.large))
                     .foregroundColor(Color.white)
                 DailyListView(title: "Previsão para 10 dias", dailyData: viewModel.getWeatherDaily())
-                    .padding([.horizontal], 12)
+                    .padding([.horizontal], .custom(.medium))
                     .foregroundColor(Color.white)
             }
             .background(Color.tertiaryBrand)
