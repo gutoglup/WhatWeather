@@ -7,33 +7,29 @@
 
 import Combine
 import CoreLocation
+import Moya
 
 struct GeocoderRemoteDataSource: GeocoderDataSource {
     
     private let geocoder: CLGeocoder
+    private let provider: MoyaProvider<GeocoderRouter>
+    private let settings: NetworkSettings
     
-    init(geocoder: CLGeocoder) {
+    init(geocoder: CLGeocoder,
+         provider: MoyaProvider<GeocoderRouter>,
+         settings: NetworkSettings) {
         self.geocoder = geocoder
+        self.provider = provider
+        self.settings = settings
     }
     
-    func getPlaces(name: String) -> AnyPublisher<[AddressLocation], LocationError> {
-        let placemarkRequest = PassthroughSubject<[AddressLocation], LocationError>()
-        
-        geocoder.geocodeAddressString(name) { placemarks, error in
-            guard let placemarks = placemarks else {
-                placemarkRequest.send(completion: .failure(.unableToSearchLocation))
-                return
-            }
-            let addresses = placemarks.map { placemark -> AddressLocation in
-                let coordinates = placemark.location?.coordinate
-                return AddressLocation(
-                    name: placemark.name ?? "",
-                    latitude: coordinates?.latitude ?? 0,
-                    longitude: coordinates?.longitude ?? 0)
-            }
-            placemarkRequest.send(addresses)
-        }
-        return placemarkRequest.eraseToAnyPublisher()
+    func getPlaces(params: DirectGeocodingParams) -> AnyPublisher<[AddressLocation], Error> {
+        let route = GeocoderRoute.directGeocoding(params: params)
+        let router: GeocoderRouter = .init(route: route, settings: settings)
+        return provider.requestPublisher(router)
+            .tryMap(\.data)
+            .decode(type: [AddressLocation].self, decoder: JSONDecoder())
+            .eraseToAnyPublisher()
     }
     
     func requestUserLocality(location: CLLocation) -> AnyPublisher<CLPlacemark, LocationError> {

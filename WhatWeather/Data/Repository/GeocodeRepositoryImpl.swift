@@ -16,8 +16,8 @@ struct GeocoderRepositoryImpl: GeocoderRepository {
         self.dataSource = dataSource
     }
     
-    func getPlaces(name: String) -> AnyPublisher<[AddressLocation], LocationError> {
-        dataSource.getPlaces(name: name)
+    func getPlaces(params: DirectGeocodingParams) -> AnyPublisher<[AddressLocation], Error> {
+        dataSource.getPlaces(params: params)
     }
     
     func requestUserLocality(location: CLLocation) -> AnyPublisher<CLPlacemark, LocationError> {

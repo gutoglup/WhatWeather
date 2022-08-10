@@ -9,6 +9,6 @@ import CoreLocation
 import Combine
 
 protocol GeocoderDataSource {
-    func getPlaces(name: String) -> AnyPublisher<[AddressLocation], LocationError>
+    func getPlaces(params: DirectGeocodingParams) -> AnyPublisher<[AddressLocation], Error>
     func requestUserLocality(location: CLLocation) -> AnyPublisher<CLPlacemark, LocationError>
 }

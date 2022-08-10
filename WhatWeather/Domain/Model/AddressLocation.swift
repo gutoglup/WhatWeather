@@ -7,10 +7,20 @@
 
 import Foundation
 
-struct AddressLocation: Identifiable {
+struct AddressLocation: Identifiable, Decodable {
     
-    let id = UUID()
+    var id = UUID()
     let name: String
     let latitude: Double
     let longitude: Double
+    let state: String?
+    let country: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case latitude = "lat"
+        case longitude = "lon"
+        case state
+        case country
+    }
 }

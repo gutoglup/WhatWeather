@@ -35,9 +35,7 @@ struct WeatherAttributes: Decodable, Identifiable {
     }
     
     var hourFormatted: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter.string(from: Date(timeIntervalSince1970: TimeInterval(currentTime)))
+        currentTime.toHourFormatted
     }
     
     enum CodingKeys: String, CodingKey {
