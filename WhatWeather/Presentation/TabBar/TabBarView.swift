@@ -35,6 +35,8 @@ struct TabBarView: View {
                 }
         }.onAppear {
             UITabBar.appearance().backgroundColor = UIColor(Color.primaryBrand)
+            UITabBar.appearance().barTintColor = UIColor(Color.primaryBrand)
+            UITabBar.appearance().isTranslucent = false
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color.neutralBrand)
         }
             
