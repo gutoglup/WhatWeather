@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D10A879028A3D9B7007BC519 /* GeocoderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A878F28A3D9B7007BC519 /* GeocoderRouter.swift */; };
+		D10A879228A3DA27007BC519 /* DirectGeocodingParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A879128A3DA27007BC519 /* DirectGeocodingParams.swift */; };
+		D10A879428A3E191007BC519 /* SearchPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A879328A3E191007BC519 /* SearchPlaceCell.swift */; };
+		D10A879728A424E5007BC519 /* AddressLocation+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A879628A424E5007BC519 /* AddressLocation+Fixtures.swift */; };
+		D10A879928A42672007BC519 /* WeatherAttributes+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A879828A42672007BC519 /* WeatherAttributes+Fixtures.swift */; };
+		D10A879B28A42782007BC519 /* WeatherInfo+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A879A28A42782007BC519 /* WeatherInfo+Fixtures.swift */; };
+		D10A879D28A42D62007BC519 /* DailyWeatherAttributes+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A879C28A42D62007BC519 /* DailyWeatherAttributes+Fixtures.swift */; };
+		D10A879F28A42E67007BC519 /* DailyTemperature+Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10A879E28A42E67007BC519 /* DailyTemperature+Fixtures.swift */; };
 		D13135C828A18C2F0050B1EA /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13135C728A18C2F0050B1EA /* TabBarView.swift */; };
 		D13135CB28A190AE0050B1EA /* SearchPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13135CA28A190AE0050B1EA /* SearchPlaceView.swift */; };
 		D13135CD28A194F00050B1EA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13135CC28A194F00050B1EA /* Colors.xcassets */; };
@@ -94,6 +102,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D10A878F28A3D9B7007BC519 /* GeocoderRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocoderRouter.swift; sourceTree = "<group>"; };
+		D10A879128A3DA27007BC519 /* DirectGeocodingParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectGeocodingParams.swift; sourceTree = "<group>"; };
+		D10A879328A3E191007BC519 /* SearchPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceCell.swift; sourceTree = "<group>"; };
+		D10A879628A424E5007BC519 /* AddressLocation+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddressLocation+Fixtures.swift"; sourceTree = "<group>"; };
+		D10A879828A42672007BC519 /* WeatherAttributes+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherAttributes+Fixtures.swift"; sourceTree = "<group>"; };
+		D10A879A28A42782007BC519 /* WeatherInfo+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherInfo+Fixtures.swift"; sourceTree = "<group>"; };
+		D10A879C28A42D62007BC519 /* DailyWeatherAttributes+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyWeatherAttributes+Fixtures.swift"; sourceTree = "<group>"; };
+		D10A879E28A42E67007BC519 /* DailyTemperature+Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyTemperature+Fixtures.swift"; sourceTree = "<group>"; };
 		D13135C728A18C2F0050B1EA /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D13135CA28A190AE0050B1EA /* SearchPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceView.swift; sourceTree = "<group>"; };
 		D13135CC28A194F00050B1EA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -179,6 +195,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D10A879528A424CA007BC519 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				D10A879628A424E5007BC519 /* AddressLocation+Fixtures.swift */,
+				D10A879828A42672007BC519 /* WeatherAttributes+Fixtures.swift */,
+				D10A879A28A42782007BC519 /* WeatherInfo+Fixtures.swift */,
+				D10A879C28A42D62007BC519 /* DailyWeatherAttributes+Fixtures.swift */,
+				D10A879E28A42E67007BC519 /* DailyTemperature+Fixtures.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		D13135C628A18C180050B1EA /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				D150C91128A2D0C400121F52 /* GeocoderRemoteDataSource.swift */,
+				D10A878F28A3D9B7007BC519 /* GeocoderRouter.swift */,
 			);
 			path = Geocoder;
 			sourceTree = "<group>";
@@ -288,9 +317,9 @@
 		D19733CB287088450056FA2A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D1B64184289AFAB700807418 /* Components */,
 				D13135C928A1909C0050B1EA /* SearchPlace */,
 				D13135C628A18C180050B1EA /* TabBar */,
-				D1B64184289AFAB700807418 /* Components */,
 				D1F53594287361D400E21925 /* Dashboard */,
 			);
 			path = Presentation;
@@ -319,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				D1F5357D2873183400E21925 /* OneCallRequestParams.swift */,
+				D10A879128A3DA27007BC519 /* DirectGeocodingParams.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -326,6 +356,7 @@
 		D19733CF287088C60056FA2A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D10A879528A424CA007BC519 /* Fixtures */,
 				D1FC6086287486D700F28FBD /* Enums */,
 				D1F5358C28732B8200E21925 /* WeatherData.swift */,
 				D1F5358E28732F7000E21925 /* WeatherAttributes.swift */,
@@ -383,6 +414,7 @@
 				D1B64185289AFAC000807418 /* ErrorView.swift */,
 				D1B64191289D8E9500807418 /* HourlyListView.swift */,
 				D1DFEA1D28A141B6000EF39D /* DailyListView.swift */,
+				D10A879328A3E191007BC519 /* SearchPlaceCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -604,6 +636,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D10A879028A3D9B7007BC519 /* GeocoderRouter.swift in Sources */,
 				D1F535A22873749200E21925 /* CompositionRoot.swift in Sources */,
 				D1F5359F28736BC400E21925 /* DependencyInjectionContainer.swift in Sources */,
 				D1D7AD952877687700D7D12C /* Double+Extension.swift in Sources */,
@@ -617,13 +650,17 @@
 				D1B64192289D8E9500807418 /* HourlyListView.swift in Sources */,
 				D1E58ECF2870986B007ABE93 /* NetworkSettings.swift in Sources */,
 				D150C90B28A2CE1D00121F52 /* GeocoderRepository.swift in Sources */,
+				D10A879928A42672007BC519 /* WeatherAttributes+Fixtures.swift in Sources */,
 				D1B64186289AFAC000807418 /* ErrorView.swift in Sources */,
 				D150C91228A2D0C400121F52 /* GeocoderRemoteDataSource.swift in Sources */,
+				D10A879D28A42D62007BC519 /* DailyWeatherAttributes+Fixtures.swift in Sources */,
 				D1F5358D28732B8200E21925 /* WeatherData.swift in Sources */,
 				D1F4E38228A29C09003F2E48 /* View+Extension.swift in Sources */,
 				D1DFEA1C28A13EA8000EF39D /* DateFormats.swift in Sources */,
+				D10A879F28A42E67007BC519 /* DailyTemperature+Fixtures.swift in Sources */,
 				D19733E2287097380056FA2A /* OneCallRouter.swift in Sources */,
 				D1F535972873620D00E21925 /* DashboardViewModel.swift in Sources */,
+				D10A879428A3E191007BC519 /* SearchPlaceCell.swift in Sources */,
 				D13231502743DFCD004D8512 /* WhatWeatherApp.swift in Sources */,
 				D1F5358F28732F7000E21925 /* WeatherAttributes.swift in Sources */,
 				D1F535992873622E00E21925 /* DashboardView.swift in Sources */,
@@ -641,11 +678,14 @@
 				D1DFEA1E28A141B6000EF39D /* DailyListView.swift in Sources */,
 				D19733D428708C330056FA2A /* OneCallRemoteDataSource.swift in Sources */,
 				D1FC6088287486E000F28FBD /* LocationError.swift in Sources */,
+				D10A879728A424E5007BC519 /* AddressLocation+Fixtures.swift in Sources */,
 				D1F535852873205900E21925 /* Constants.swift in Sources */,
 				D1D7AD9728776DA000D7D12C /* DailyTemperature.swift in Sources */,
 				D1B64188289AFC9B00807418 /* LoadingState.swift in Sources */,
 				D1F535932873347A00E21925 /* GetCurrentWeatherUseCase.swift in Sources */,
 				D150C90F28A2D08600121F52 /* GeocoderDataSource.swift in Sources */,
+				D10A879B28A42782007BC519 /* WeatherInfo+Fixtures.swift in Sources */,
+				D10A879228A3DA27007BC519 /* DirectGeocodingParams.swift in Sources */,
 				D1D7AD9928776E9E00D7D12C /* DailyWeatherAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

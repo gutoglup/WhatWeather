@@ -57,8 +57,6 @@ struct DailyListView: View {
 
 struct DailyListView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyListView(title: "Previsão para 10 dias", dailyData: [
-            DailyWeatherAttributes(currentTime: Int(Date().timeIntervalSince1970), sunrise: nil, sunset: nil, moonrise: nil, moonset: nil, moonphase: nil, temperature: DailyTemperature(day: 200, min: 100, max: 300, night: 0, eve: 0, morn: 0), feelsLike: DailyTemperature(day: 0, min: 0, max: 0, night: 0, eve: 0, morn: 0), pressure: 0, humidity: 0, dewPoint: 0, windSpeed: 0, windDeg: 0, weather: [], clouds: 0, pop: 0, rain: 0, uvi: 0),
-            DailyWeatherAttributes(currentTime: Int(Date().addingTimeInterval(1000000).timeIntervalSince1970), sunrise: nil, sunset: nil, moonrise: nil, moonset: nil, moonphase: nil, temperature: DailyTemperature(day: 200, min: 100, max: 300, night: 0, eve: 0, morn: 0), feelsLike: DailyTemperature(day: 0, min: 0, max: 0, night: 0, eve: 0, morn: 0), pressure: 0, humidity: 0, dewPoint: 0, windSpeed: 0, windDeg: 0, weather: [], clouds: 0, pop: 0, rain: 0, uvi: 0)])
+        DailyListView(title: "Previsão para 10 dias", dailyData: Array(repeating: DailyWeatherAttributes.fixture(), count: 5))
     }
 }

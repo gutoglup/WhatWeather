@@ -23,11 +23,9 @@ struct HourlyListView: View {
                             VStack(alignment: .center) {
                                 Text(hourWeather.hourFormatted)
                                     .font(.system(size: 12, weight: .light, design: .default))
-//                                    .foregroundColor(Color.primaryBrand)
                                 
                                 Text(hourWeather.temperatureFormatted)
                                     .font(.system(size: 20, weight: .regular, design: .default))
-//                                    .foregroundColor(Color.primaryBrand)
                             }
                             .padding(8)
                         }
@@ -46,9 +44,6 @@ struct HourlyListView: View {
 struct HourlyListView_Previews: PreviewProvider {
     static var previews: some View {
         HourlyListView(title: "Hoje",
-                       hourlyData: [
-            WeatherAttributes(currentTime: Int(Date().timeIntervalSince1970), sunrise: nil, sunset: nil, temperature: 300, feelsLike: 100, pressure: 0, humidity: 0, dewPoint: 0, uvi: 0, clouds: 0, visibility: 0, windSpeed: 0, windDeg: 0, windGust: nil, weather: []),
-            WeatherAttributes(currentTime: Int(Date().timeIntervalSince1970), sunrise: nil, sunset: nil, temperature: 300, feelsLike: 100, pressure: 0, humidity: 0, dewPoint: 0, uvi: 0, clouds: 0, visibility: 0, windSpeed: 0, windDeg: 0, windGust: nil, weather: [])
-        ])
+                       hourlyData: Array(repeating: WeatherAttributes.fixture(), count: 5))
     }
 }
