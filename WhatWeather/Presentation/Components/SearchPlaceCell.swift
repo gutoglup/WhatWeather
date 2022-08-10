@@ -20,14 +20,14 @@ struct SearchPlaceCell: View {
             VStack {
                 HStack(alignment: .lastTextBaseline) {
                     Text(addressLocation.name)
-                        .font(.system(size: 16, weight: .bold, design: .default))
+                        .font(.custom(.bold(.bodyMedium)))
                         .foregroundColor(Color.primaryBrand)
                     Spacer()
                     Text(addressLocation.state ?? "")
-                        .font(.system(size: 12, weight: .regular, design: .default))
+                        .font(.custom(.regular(.caption)))
                         .foregroundColor(Color.primaryBrand)
                     Text(addressLocation.country)
-                        .font(.system(size: 12, weight: .medium, design: .default))
+                        .font(.custom(.regular(.caption)))
                         .foregroundColor(Color.primaryBrand)
                 }
                 

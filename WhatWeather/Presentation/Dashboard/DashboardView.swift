@@ -29,18 +29,18 @@ struct DashboardView: View {
                     Text(viewModel.placemark?.locality ?? "")
                         .padding([.leading, .trailing], 8)
                         .padding(.top, 32)
-                        .font(.system(size: 24, weight: .medium, design: .default))
+                        .font(.custom(.medium(.titleMedium)))
                     Text(viewModel.currentTemperature(weatherData))
-                        .font(.system(size: 42, weight: .light, design: .default))
+                        .font(.custom(.light(.titleLarge)))
                         .padding([.bottom], 4)
                     Text(viewModel.currentTemperatureDescription(weatherData))
-                        .font(.caption)
+                        .font(.custom(.regular(.caption)))
                     HStack {
                         Text("Max: \(viewModel.dailyMaxTemperature(weatherData))")
                             .padding([.trailing], 4)
                         Text("Min: \(viewModel.dailyMinTemperature(weatherData))")
                     }
-                    .font(.caption)
+                    .font(.custom(.regular(.caption)))
                 }
                 .foregroundColor(Color.white)
                 .frame(maxWidth: .infinity, alignment: .center)

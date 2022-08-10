@@ -17,7 +17,7 @@ struct DailyListView: View {
             
             VStack(alignment: .leading) {
                 Text(title.uppercased())
-                    .font(.system(size: 12, weight: .regular, design: .default))
+                    .font(.custom(.regular(.caption)))
                     .padding([.horizontal], 8)
                     .opacity(0.9)
                 Divider().overlay(Color.quartenaryBrand)
@@ -26,10 +26,10 @@ struct DailyListView: View {
                     VStack {
                         HStack {
                             Text(daily.dateFormatted)
-                                .font(.system(size: 14, weight: .regular, design: .default))
+                                .font(.custom(.regular(.bodySmall)))
                             Spacer()
                             Text(daily.temperature?.minFormatted ?? "")
-                                .font(.system(size: 14, weight: .medium, design: .default))
+                                .font(.custom(.medium(.bodySmall)))
                                 .opacity(0.7)
                             
                             LinearGradient(colors: [.cyan, .yellow, .orange], startPoint: .leading, endPoint: .trailing)
@@ -37,7 +37,7 @@ struct DailyListView: View {
                                 .mask(RoundedRectangle(cornerRadius: 8))
                                 
                             Text(daily.temperature?.maxFormatted ?? "")
-                                .font(.system(size: 14, weight: .medium, design: .default))
+                                .font(.custom(.medium(.bodySmall)))
                         }
                         Divider().overlay(Color.quartenaryBrand)
                     }

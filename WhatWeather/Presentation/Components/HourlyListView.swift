@@ -22,10 +22,9 @@ struct HourlyListView: View {
                         ZStack {
                             VStack(alignment: .center) {
                                 Text(hourWeather.hourFormatted)
-                                    .font(.system(size: 12, weight: .light, design: .default))
-                                
+                                    .font(.custom(.light(.bodySmall)))
                                 Text(hourWeather.temperatureFormatted)
-                                    .font(.system(size: 20, weight: .regular, design: .default))
+                                    .font(.custom(.regular(.titleSmall)))
                             }
                             .padding(8)
                         }
