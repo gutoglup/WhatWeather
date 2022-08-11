@@ -28,7 +28,8 @@ final class DependencyInjectionContainer {
             DashboardViewModel(
                 getCurrentWeatherUseCase: resolver.resolve(GetCurrentWeatherUseCase.self)!,
                 getUserLocationUseCase: resolver.resolve(GetUserLocationUseCase.self)!,
-                getUserAddressUseCase: resolver.resolve(GetUserAddressUseCase.self)!)
+                getUserAddressUseCase: resolver.resolve(GetUserAddressUseCase.self)!,
+                getWeatherIconUseCase: resolver.resolve(GetWeatherIconUseCase.self)!)
         }
         
         container.register(SearchPlaceViewModel.self) { resolver in
@@ -54,6 +55,10 @@ final class DependencyInjectionContainer {
             GetUserLocationUseCaseImpl(locationManager: CLLocationManager())
         }
         
+        container.register(GetWeatherIconUseCase.self) { resolver in
+            GetWeatherIconUseCaseImpl(repository: resolver.resolve(WeatherIconRepository.self)!)
+        }
+        
         // MARK: - Repository
         
         container.register(GeocoderRepository.self) { resolver in
@@ -62,6 +67,12 @@ final class DependencyInjectionContainer {
         
         container.register(OneCallRepository.self) { resolver in
             OneCallRepositoryImpl(dataSource: resolver.resolve(OneCallDataSource.self)!)
+        }
+        
+        container.register(WeatherIconRepository.self) { resolver in
+            WeatherIconRepositoryImpl(
+                remoteDataSource: resolver.resolve(WeatherIconDataSource.self, name: DataSourceType.remote.rawValue)!,
+                fileDataSource: resolver.resolve(WeatherIconDataSource.self, name: DataSourceType.database.rawValue)!)
         }
         
         // MARK: - Data source
@@ -75,6 +86,15 @@ final class DependencyInjectionContainer {
         container.register(OneCallDataSource.self) { resolver in
             OneCallRemoteDataSource(provider: MoyaProvider<OneCallRouter>(plugins: [NetworkLoggerPlugin()]),
                                     settings: NetworkSettings(apiKey: resolver.resolve(ApiKey.self)!))
+        }
+        
+        container.register(WeatherIconDataSource.self, name: DataSourceType.database.rawValue) { resolver in
+            WeatherIconDatabaseDataSource(fileManager: FileManager())
+        }
+        
+        container.register(WeatherIconDataSource.self, name: DataSourceType.remote.rawValue) { resolver in
+            WeatherIconRemoteDataSource(provider: MoyaProvider<WeatherIconRouter>(plugins: [NetworkLoggerPlugin()]),
+                                        settings: NetworkSettings(apiKey: resolver.resolve(ApiKey.self)!))
         }
         
         // MARK: - Helpers

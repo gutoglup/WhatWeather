@@ -24,7 +24,7 @@ struct WeatherAttributes: Decodable, Identifiable {
     let windSpeed: Double
     let windDeg: Int
     let windGust: Double?
-    let weather: [WeatherInfo]
+    var weather: [WeatherInfo]
     
     var temperatureFormatted: String {
         temperature.temperatureLocalized

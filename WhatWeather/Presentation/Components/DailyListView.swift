@@ -14,7 +14,6 @@ struct DailyListView: View {
     
     var body: some View {
         VStack() {
-            
             VStack(alignment: .leading) {
                 Text(title.uppercased())
                     .font(.custom(.regular(.caption)))
@@ -35,7 +34,7 @@ struct DailyListView: View {
                             LinearGradient(colors: [.cyan, .yellow, .orange], startPoint: .leading, endPoint: .trailing)
                                 .frame(width: 20, height: 4)
                                 .mask(RoundedRectangle(cornerRadius: 8))
-                                
+                            
                             Text(daily.temperature?.maxFormatted ?? "")
                                 .font(.custom(.medium(.bodySmall)))
                         }

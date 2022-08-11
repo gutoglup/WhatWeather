@@ -7,6 +7,7 @@
 
 import Combine
 import CoreLocation
+import Foundation
 
 final class DashboardViewModel: ObservableObject {
     
@@ -21,13 +22,16 @@ final class DashboardViewModel: ObservableObject {
     private let getCurrentWeatherUseCase: GetCurrentWeatherUseCase
     private let getUserLocationUseCase: GetUserLocationUseCase
     private let getUserAddressUseCase: GetUserAddressUseCase
+    private let getWeatherIconUseCase: GetWeatherIconUseCase
     
     init(getCurrentWeatherUseCase: GetCurrentWeatherUseCase,
          getUserLocationUseCase: GetUserLocationUseCase,
-         getUserAddressUseCase: GetUserAddressUseCase) {
+         getUserAddressUseCase: GetUserAddressUseCase,
+         getWeatherIconUseCase: GetWeatherIconUseCase) {
         self.getCurrentWeatherUseCase = getCurrentWeatherUseCase
         self.getUserLocationUseCase = getUserLocationUseCase
         self.getUserAddressUseCase = getUserAddressUseCase
+        self.getWeatherIconUseCase = getWeatherIconUseCase
     }
     
     func getCurrentWeather(location: CLLocationCoordinate2D) {
@@ -35,11 +39,14 @@ final class DashboardViewModel: ObservableObject {
             .map { weatherData -> WeatherData in
             print(weatherData)
             return weatherData
-            }.sink(receiveCompletion: {
-                print($0)
+            }.sink(receiveCompletion: { _ in
+//                print($0)
             }, receiveValue: { weatherData in
                 self.weatherData = weatherData
                 self.state = .loaded(weatherData)
+                if let weatherInfo = weatherData.current.weather.first {
+                    self.getWeatherIcon(weatherInfo: weatherInfo)
+                }
             })
             .store(in: &cancellables)
     }
@@ -70,6 +77,19 @@ final class DashboardViewModel: ObservableObject {
 
     }
     
+    func getWeatherIcon(weatherInfo: WeatherInfo) {
+        getWeatherIconUseCase.getIcon(name: weatherInfo.icon)
+            .sink { completion in
+                print(completion)
+            } receiveValue: { iconUrl in
+                if self.weatherData != nil {
+                    self.weatherData!.current.weather[0].iconUrl = iconUrl
+                    self.state = .loaded(self.weatherData!)
+                }
+            }.store(in: &cancellables)
+
+    }
+    
     func currentTemperature(_ weatherData: WeatherData) -> String {
         weatherData.current.temperature.temperatureLocalized
     }
@@ -92,5 +112,9 @@ final class DashboardViewModel: ObservableObject {
     
     func getWeatherDaily() -> [DailyWeatherAttributes] {
         Array(weatherData?.daily.prefix(10) ?? [])
+    }
+    
+    func getWeatherIconUrl(_ weatherData: WeatherData) -> URL? {
+        weatherData.current.weather.first?.iconUrl
     }
 }

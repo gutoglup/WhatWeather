@@ -14,7 +14,7 @@ struct WeatherData: Decodable {
     
     let timezone: String
     let timezoneOffset: Int
-    let current: WeatherAttributes
+    var current: WeatherAttributes
     let hourly: [WeatherAttributes]
     let daily: [DailyWeatherAttributes]
     

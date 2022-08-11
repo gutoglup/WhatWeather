@@ -26,6 +26,7 @@ struct DashboardView: View {
         case .loaded(let weatherData):
             ScrollView {
                 VStack(alignment: .center) {
+                    AsyncImage(url: viewModel.getWeatherIconUrl(weatherData))
                     Text(viewModel.placemark?.locality ?? "")
                         .padding([.leading, .trailing], .custom(.small))
                         .padding(.top, .custom(.extraLargest))
