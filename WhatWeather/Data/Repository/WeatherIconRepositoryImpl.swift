@@ -20,16 +20,11 @@ struct WeatherIconRepositoryImpl: WeatherIconRepository {
     }
     
     func getIcon(params: WeatherIconParams) -> AnyPublisher<URL, Error> {
-        
-        // FIXME: Correct this logic
         fileDataSource.getIcon(params: params)
-            .catch { _ in
-                remoteDataSource.getIcon(params: params)
+            .tryCatch { error -> AnyPublisher<URL, Error> in
+                guard let error = error as? FileManagerError,
+                      error == .fileNotFound else { throw error }
+                return self.remoteDataSource.getIcon(params: params)
             }.eraseToAnyPublisher()
-//        Publishers.Concatenate(
-//            prefix: fileDataSource.getIcon(params: params),
-//            suffix: remoteDataSource.getIcon(params: params))
-//        remoteDataSource.getIcon(params: params)
-//        .eraseToAnyPublisher()
     }
 }

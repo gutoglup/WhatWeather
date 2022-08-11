@@ -8,6 +8,7 @@
 import Combine
 import CoreLocation
 import Foundation
+import UIKit
 
 final class DashboardViewModel: ObservableObject {
     
@@ -114,7 +115,11 @@ final class DashboardViewModel: ObservableObject {
         Array(weatherData?.daily.prefix(10) ?? [])
     }
     
-    func getWeatherIconUrl(_ weatherData: WeatherData) -> URL? {
-        weatherData.current.weather.first?.iconUrl
+    func getWeatherIconUrl(_ weatherData: WeatherData) -> UIImage {
+        let path = weatherData.current.weather.first?.iconUrl?.path ?? ""
+        guard let image = UIImage(contentsOfFile: path) else {
+            return UIImage()
+        }
+        return image
     }
 }
