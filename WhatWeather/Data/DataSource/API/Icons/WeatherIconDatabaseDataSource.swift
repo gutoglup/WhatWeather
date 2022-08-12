@@ -23,9 +23,7 @@ struct WeatherIconDatabaseDataSource: WeatherIconDataSource {
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         } else {
-//            return Empty(completeImmediately: false)
-//                .eraseToAnyPublisher()
-            return Fail(error: FileManagerError.fileNotFound)
+            return Empty(completeImmediately: true)
                 .eraseToAnyPublisher()
         }
     }
