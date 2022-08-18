@@ -52,7 +52,9 @@ struct SearchPlaceView: View {
                         }.offset(x: .custom(.none),
                                  y: .custom(.medium))
                     }
-                    .background(Color.quartenaryBrand.mask(RoundedRectangle(cornerRadius: 10)))
+                    .background(
+                        Color.quartenaryBrand.clipShape(
+                            CornerRadiusShape(radius: 10, corners: [.topLeft, .topRight])))
                 }
                 
             }
