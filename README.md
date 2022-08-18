@@ -1,5 +1,7 @@
 # WhatWeather
 
+| <img src="https://user-images.githubusercontent.com/7704799/185476664-f8711d06-1648-4b89-8d6f-055b048e3b85.png" width="200" height="400"> | <img src="https://user-images.githubusercontent.com/7704799/185476621-ff7b6dfa-b236-4b9e-a22d-6b14e6da6dd6.png" width="200" height="400"> | <img src="https://user-images.githubusercontent.com/7704799/185476645-9344bdb4-9772-40bc-a339-8c0d907b69da.png" width="200" height="400"> |
+
 ## Structure
 
 For this project was used MVVM with Clean Architecture, using Data Source, Repository, Use Cases, and ViewModel layers. It used SwiftUI to construct all views layers and components because view code is cleaner and faster than Storyboards and Xibs, specifically regarding the size of an XML file, and dependency injection.
