@@ -26,7 +26,7 @@ struct TabBarView: View {
                 viewModel:
                     DependencyInjectionContainer.shared.container
                     .resolve(SearchPlaceViewModel.self)!)
-            .tabItem{
+            .tabItem {
                 VStack {
                     Image(systemName: "magnifyingglass")
                             .renderingMode(.template)
@@ -36,8 +36,17 @@ struct TabBarView: View {
         }.onAppear {
             UITabBar.appearance().backgroundColor = UIColor(Color.primaryBrand)
             UITabBar.appearance().barTintColor = UIColor(Color.primaryBrand)
-            UITabBar.appearance().isTranslucent = false
             UITabBar.appearance().unselectedItemTintColor = UIColor(Color.neutralBrand)
+            UITabBar.appearance().shadowImage = UIImage()
+            UITabBar.appearance().backgroundImage = UIImage()
+            
+            let navigationBarAppearance = UINavigationBarAppearance()
+            
+            navigationBarAppearance.shadowColor = .clear
+            navigationBarAppearance.titleTextAttributes = [.foregroundColor: UIColor(Color.quintenaryBrand)]
+            navigationBarAppearance.configureWithTransparentBackground()
+            
+            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         }
     }
 }

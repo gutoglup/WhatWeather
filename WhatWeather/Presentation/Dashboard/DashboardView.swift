@@ -25,30 +25,15 @@ struct DashboardView: View {
             ErrorView(error: error, retryAction: viewModel.getUserLocation)
         case .loaded(let weatherData):
             ScrollView {
-                VStack(alignment: .center) {
-                    Image(uiImage: viewModel.getWeatherIconUrl(weatherData))
-                    Text(viewModel.placemark?.locality ?? "")
-                        .padding([.leading, .trailing], .custom(.small))
-                        .padding(.top, .custom(.extraLargest))
-                        .font(.custom(.medium(.titleMedium)))
-                    Text(viewModel.currentTemperature(weatherData))
-                        .font(.custom(.light(.titleLarge)))
-                        .padding([.bottom], .custom(.smallest))
-                    Text(viewModel.currentTemperatureDescription(weatherData))
-                        .font(.custom(.regular(.caption)))
-                    HStack {
-                        Text("Max: \(viewModel.dailyMaxTemperature(weatherData))")
-                            .padding([.trailing], .custom(.smallest))
-                        Text("Min: \(viewModel.dailyMinTemperature(weatherData))")
-                    }
-                    .font(.custom(.regular(.caption)))
-                }
+                CurrentWeatherView(
+                    viewModel: DependencyInjectionContainer
+                        .shared.container.resolve(CurrentWeatherViewModel.self, argument: weatherData)!)
                 .foregroundColor(Color.white)
                 .frameWidthInfinity()
                 .padding([.bottom], .custom(.medium))
             
                 HourlyListView(title: "Hoje", hourlyData: viewModel.getWeatherHourly())
-                    .padding([.horizontal], .custom(.small))
+                    .padding([.horizontal], .custom(.medium))
                     .padding([.vertical], .custom(.large))
                     .foregroundColor(Color.white)
                 DailyListView(title: "Previsão para 10 dias", dailyData: viewModel.getWeatherDaily())

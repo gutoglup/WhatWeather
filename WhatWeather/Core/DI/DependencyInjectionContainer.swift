@@ -27,14 +27,25 @@ final class DependencyInjectionContainer {
         container.register(DashboardViewModel.self) { resolver in
             DashboardViewModel(
                 getCurrentWeatherUseCase: resolver.resolve(GetCurrentWeatherUseCase.self)!,
-                getUserLocationUseCase: resolver.resolve(GetUserLocationUseCase.self)!,
-                getUserAddressUseCase: resolver.resolve(GetUserAddressUseCase.self)!,
-                getWeatherIconUseCase: resolver.resolve(GetWeatherIconUseCase.self)!)
+                getUserLocationUseCase: resolver.resolve(GetUserLocationUseCase.self)!)
         }
         
         container.register(SearchPlaceViewModel.self) { resolver in
             SearchPlaceViewModel(
                 getPlacesUseCase: resolver.resolve(GetPlacesUseCase.self)!)
+        }
+        
+        container.register(CurrentWeatherViewModel.self) { (resolver, weatherData: WeatherData) in
+            CurrentWeatherViewModel(
+                getUserAddressUseCase: resolver.resolve(GetUserAddressUseCase.self)!,
+                getWeatherIconUseCase: resolver.resolve(GetWeatherIconUseCase.self)!,
+                weatherData: weatherData)
+        }
+        
+        container.register(PlaceDetailViewModel.self) { (resolver, coordinates: CLLocationCoordinate2D) in
+            PlaceDetailViewModel(
+                getCurrentWeatherUseCase: resolver.resolve(GetCurrentWeatherUseCase.self)!,
+                location: coordinates)
         }
         
         // MARK: - Use case

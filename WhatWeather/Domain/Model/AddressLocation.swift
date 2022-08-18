@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct AddressLocation: Identifiable, Decodable {
     
@@ -15,6 +16,10 @@ struct AddressLocation: Identifiable, Decodable {
     let longitude: Double
     let state: String?
     let country: String
+    
+    var coordinates: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
     
     enum CodingKeys: String, CodingKey {
         case name
