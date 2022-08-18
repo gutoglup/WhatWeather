@@ -22,8 +22,9 @@ To build this application, only open the `WhatWeather.xcproject` and wait for SP
 ## Roadmap
 
 - [ ] Create view model tests.
-- [ ] Implement cache of download icon and request the weather based on specific duration.
-- [ ] Create files to store mocks like JSON for stubs.
+- [x] Implement download weather icon and consult the database or fetch on remote.
+- [ ] Cache the weather request based on specific timeout.
+- [x] Create files to store mocks like JSON for stubs. (It was used fixture pattern to solve the problem).
 - [ ] Localize the application.
 - [ ] Improve tests with error cases.
 - [x] List daily temperature.
