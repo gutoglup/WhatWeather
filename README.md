@@ -1,6 +1,6 @@
 # WhatWeather
 
-| <img src="https://user-images.githubusercontent.com/7704799/185476664-f8711d06-1648-4b89-8d6f-055b048e3b85.png" width="200" height="400"> | <img src="https://user-images.githubusercontent.com/7704799/185476621-ff7b6dfa-b236-4b9e-a22d-6b14e6da6dd6.png" width="200" height="400"> | <img src="https://user-images.githubusercontent.com/7704799/185476645-9344bdb4-9772-40bc-a339-8c0d907b69da.png" width="200" height="400"> |
+| <img src="https://user-images.githubusercontent.com/7704799/185476664-f8711d06-1648-4b89-8d6f-055b048e3b85.png" width="200" height="400"> | <img src="https://user-images.githubusercontent.com/7704799/185476645-9344bdb4-9772-40bc-a339-8c0d907b69da.png" width="200" height="400"> | <img src="https://user-images.githubusercontent.com/7704799/185476621-ff7b6dfa-b236-4b9e-a22d-6b14e6da6dd6.png" width="200" height="400"> |
 
 ## Structure
 
