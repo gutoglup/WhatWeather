@@ -6,6 +6,8 @@
 
 For this project was used MVVM with Clean Architecture, using Data Source, Repository, Use Cases, and ViewModel layers. It used SwiftUI to construct all views layers and components because view code is cleaner and faster than Storyboards and Xibs, specifically regarding the size of an XML file, and dependency injection.
 
+<img width="2641" alt="WhatWeather" src="https://user-images.githubusercontent.com/7704799/185483113-14d4f74b-cc14-45d6-91fc-12377406b9f7.png">
+
 ## Mindset building
 
 To construct all layers, I preferred to create all directories first. After, I write the domain layer, based on the onion reference, like the smallest and independent layer. Then I mapped all structs and wrote the data source layer, I used a strategy design pattern to do the Dependency Inversion based on SOLID principles. The data source, repository, and use cases have two files, one for protocol and one for implementation because it permits changes in implementation without changing the contract established. The data source has the responsibility to prepare the request using the router (pattern suggested by the Moya framework), and after response, it decodes the JSON to the WeatherData object.
